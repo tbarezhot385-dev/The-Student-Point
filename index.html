@@ -6,6 +6,8 @@
     <title>THE STUDENT POINT - Cyber Cafe & Online Services</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome CDN for WhatsApp & Phone Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         tailwind.config = {
             theme: {
@@ -20,6 +22,11 @@
     </script>
     <style>
         .pink-gradient { background: linear-gradient(135deg, #FF4DA6 0%, #FF1780 100%); }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
     </style>
 </head>
 <body class="bg-white text-gray-800 font-sans">
@@ -32,29 +39,30 @@
             </div>
             <nav class="hidden md:flex space-x-4 text-sm font-semibold text-gray-700">
                 <a href="#" class="hover:text-brandPink">Home</a>
-                <a href="#" class="hover:text-brandPink">Latest Forms</a>
-                <a href="#" class="hover:text-brandPink">Scholarship</a>
-                <a href="#" class="hover:text-brandPink">Govt Jobs</a>
-                <a href="#" class="hover:text-brandPink">Admit Card</a>
-                <a href="#" class="hover:text-brandPink">Results</a>
-                <a href="#" class="hover:text-brandPink">Services</a>
-                <a href="#" class="hover:text-brandPink">Contact</a>
+                <a href="#forms" class="hover:text-brandPink">Latest Forms</a>
+                <a href="#services" class="hover:text-brandPink">Services</a>
+                <a href="#contact" class="hover:text-brandPink">Contact Us</a>
             </nav>
-            <button class="pink-gradient text-white px-4 py-2 rounded-full font-bold shadow-lg hover:opacity-90">
-                WhatsApp Us
-            </button>
+            
+            <!-- WhatsApp Button with Icon & Channel Link -->
+            <a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" target="_blank" class="pink-gradient text-white px-4 py-2 rounded-full font-bold shadow-lg hover:opacity-90 flex items-center gap-2">
+                <i class="fa-brands fa-whatsapp text-xl"></i>
+                <span>WhatsApp Us</span>
+            </a>
         </div>
     </header>
 
     <!-- Hero Banner -->
-    <section class="bg-gray-50 py-16 px-4 text-center">
+    <section class="hero-bg text-white py-20 px-4 text-center relative">
         <div class="max-w-4xl mx-auto">
-            <h1 class="text-4xl md:text-5xl font-black text-brandBlack mb-4">
+            <h1 class="text-4xl md:text-5xl font-black mb-4">
                 Your Trusted Online Form & <span class="text-brandPink">Scholarship Information</span> Portal
             </h1>
-            <p class="text-gray-600 mb-8 text-lg">सभी प्रकार के ऑनलाइन फॉर्म, स्कॉलरशिप, और साइबर कैफे सेवाओं के लिए सबसे सटीक पोर्टल।</p>
+            <p class="text-gray-200 mb-8 text-lg">सभी प्रकार के ऑनलाइन फॉर्म, स्कॉलरशिप, और साइबर कैफे सेवाओं के लिए सबसे सटीक पोर्टल।</p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="#forms" class="pink-gradient text-white px-6 py-3 rounded-xl font-bold shadow-md">Apply Online</a>
+                <a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" target="_blank" class="pink-gradient text-white px-6 py-3 rounded-xl font-bold shadow-md flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Join WhatsApp Channel
+                </a>
                 <a href="#forms" class="bg-brandBlack text-white px-6 py-3 rounded-xl font-bold hover:bg-gray-800">Latest Forms</a>
                 <a href="#contact" class="border-2 border-brandPink text-brandPink px-6 py-3 rounded-xl font-bold hover:bg-pink-50">Contact Us</a>
             </div>
@@ -68,26 +76,25 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <!-- Form Card 1 -->
             <div class="border border-gray-100 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
-                <div class="h-40 bg-pink-100 flex items-center justify-center text-brandPink font-bold">
-                    [Form Image Placeholder]
+                <div class="h-48 bg-gray-100 flex items-center justify-center overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=500&q=80" alt="Scholarship Banner" class="w-full h-full object-cover">
                 </div>
                 <div class="p-5">
                     <span class="text-xs font-bold text-red-500 bg-red-100 px-2 py-1 rounded-md">Last Date: 31 Aug 2026</span>
                     <h3 class="text-lg font-bold text-brandBlack mt-2">NSP Scholarship 2026-27</h3>
                     <p class="text-gray-600 text-sm mt-1">National Scholarship Portal online application for pre & post matric students.</p>
                     <div class="mt-4 flex justify-between items-center">
-                        <button class="pink-gradient text-white text-sm px-4 py-2 rounded-lg font-bold">Apply Now</button>
-                        <button class="text-sm font-semibold text-gray-500 hover:text-brandPink">Read More</button>
+                        <a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" target="_blank" class="pink-gradient text-white text-sm px-4 py-2 rounded-lg font-bold flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp"></i> Apply via WhatsApp
+                        </a>
                     </div>
                 </div>
             </div>
-            
-            <!-- Cards can be duplicated here -->
         </div>
     </section>
 
     <!-- Services Section -->
-    <section class="bg-gray-50 py-12 px-4">
+    <section id="services" class="bg-gray-50 py-12 px-4">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-2xl font-bold border-l-4 border-brandPink pl-3 mb-8">Our Cyber Cafe Services</h2>
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
@@ -103,12 +110,24 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-brandBlack text-white py-8 px-4 mt-12">
+    <!-- Contact & Footer -->
+    <footer id="contact" class="bg-brandBlack text-white py-12 px-4 mt-12">
         <div class="max-w-7xl mx-auto text-center space-y-4">
-            <div class="text-xl font-bold">THE STUDENT POINT</div>
+            <div class="text-2xl font-bold">THE STUDENT POINT</div>
             <p class="text-gray-400 text-sm">Your One-Stop Solution for Online Forms, Certificates & Educational Updates.</p>
-            <div class="text-xs text-gray-500">© 2026 THE STUDENT POINT. All Rights Reserved.</div>
+            
+            <!-- Contact Info / Number Section -->
+            <div class="pt-4 flex flex-col items-center gap-3">
+                <p class="text-lg font-semibold text-gray-200">
+                    <i class="fa-solid fa-phone text-brandPink mr-2"></i> Contact / Helpline Number: 
+                    <span class="text-white font-bold">+918210871416</span>
+                </p>
+                <a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" target="_blank" class="inline-flex items-center gap-2 pink-gradient text-white px-6 py-2 rounded-full font-bold shadow-lg">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> Join WhatsApp Channel
+                </a>
+            </div>
+
+            <div class="text-xs text-gray-500 pt-6">© 2026 THE STUDENT POINT. All Rights Reserved.</div>
         </div>
     </footer>
 
