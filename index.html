@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +6,7 @@
     <title>THE STUDENT POINT - Cyber Cafe & Online Services</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome CDN for WhatsApp & Phone Icons -->
+    <!-- FontAwesome CDN for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         tailwind.config = {
@@ -29,7 +29,7 @@
         }
     </style>
 </head>
-<body class="bg-white text-gray-800 font-sans">
+<body class="bg-gray-100 text-gray-800 font-sans">
 
     <!-- Header / Navbar -->
     <header class="sticky top-0 z-50 bg-white shadow-md">
@@ -39,88 +39,161 @@
             </div>
             <nav class="hidden md:flex space-x-4 text-sm font-semibold text-gray-700">
                 <a href="#" class="hover:text-brandPink">Home</a>
-                <a href="#forms" class="hover:text-brandPink">Latest Forms</a>
-                <a href="#services" class="hover:text-brandPink">Services</a>
-                <a href="#contact" class="hover:text-brandPink">Contact Us</a>
+                <a href="#latest-jobs" class="hover:text-brandPink">Latest Jobs</a>
+                <a href="#scholarship" class="hover:text-brandPink">Scholarship</a>
+                <a href="#sarkari-yojana" class="hover:text-brandPink">Sarkari Yojana</a>
+                <a href="#admit-card" class="hover:text-brandPink">Admit Card</a>
+                <a href="#results" class="hover:text-brandPink">Results</a>
             </nav>
             
-            <!-- WhatsApp Button with Icon & Channel Link -->
-            <a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" target="_blank" class="pink-gradient text-white px-4 py-2 rounded-full font-bold shadow-lg hover:opacity-90 flex items-center gap-2">
-                <i class="fa-brands fa-whatsapp text-xl"></i>
-                <span>WhatsApp Us</span>
+            <a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" target="_blank" class="pink-gradient text-white px-4 py-2 rounded-full font-bold shadow-lg hover:opacity-90 flex items-center gap-2 text-sm">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>WhatsApp Channel</span>
             </a>
         </div>
     </header>
 
+    <!-- Category Quick Links Bar -->
+    <div class="bg-brandBlack py-2 text-white overflow-x-auto">
+        <div class="max-w-7xl mx-auto px-4 flex space-x-6 text-sm font-semibold whitespace-nowrap">
+            <a href="#latest-updates" class="hover:text-brandPink"><i class="fa-solid fa-bell text-brandPink mr-1"></i> Latest Updates</a>
+            <a href="#latest-jobs" class="hover:text-brandPink"><i class="fa-solid fa-briefcase text-brandPink mr-1"></i> Latest Jobs</a>
+            <a href="#scholarship" class="hover:text-brandPink"><i class="fa-solid fa-graduation-cap text-brandPink mr-1"></i> Scholarship</a>
+            <a href="#sarkari-yojana" class="hover:text-brandPink"><i class="fa-solid fa-landmark text-brandPink mr-1"></i> Sarkari Yojana</a>
+            <a href="#admit-card" class="hover:text-brandPink"><i class="fa-solid fa-id-card text-brandPink mr-1"></i> Admit Card</a>
+            <a href="#results" class="hover:text-brandPink"><i class="fa-solid fa-square-poll-vertical text-brandPink mr-1"></i> Results</a>
+        </div>
+    </div>
+
     <!-- Hero Banner -->
-    <section class="hero-bg text-white py-20 px-4 text-center relative">
+    <section class="hero-bg text-white py-16 px-4 text-center relative">
         <div class="max-w-4xl mx-auto">
-            <h1 class="text-4xl md:text-5xl font-black mb-4">
+            <h1 class="text-3xl md:text-5xl font-black mb-4">
                 Your Trusted Online Form & <span class="text-brandPink">Scholarship Information</span> Portal
             </h1>
-            <p class="text-gray-200 mb-8 text-lg">सभी प्रकार के ऑनलाइन फॉर्म, स्कॉलरशिप, और साइबर कैफे सेवाओं के लिए सबसे सटीक पोर्टल।</p>
+            <p class="text-gray-200 mb-6 text-base md:text-lg">सभी प्रकार के ऑनलाइन फॉर्म, स्कॉलरशिप, और साइबर कैफे सेवाओं के लिए सबसे सटीक पोर्टल।</p>
             <div class="flex flex-wrap justify-center gap-4">
                 <a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" target="_blank" class="pink-gradient text-white px-6 py-3 rounded-xl font-bold shadow-md flex items-center gap-2">
                     <i class="fa-brands fa-whatsapp text-lg"></i> Join WhatsApp Channel
                 </a>
-                <a href="#forms" class="bg-brandBlack text-white px-6 py-3 rounded-xl font-bold hover:bg-gray-800">Latest Forms</a>
-                <a href="#contact" class="border-2 border-brandPink text-brandPink px-6 py-3 rounded-xl font-bold hover:bg-pink-50">Contact Us</a>
             </div>
         </div>
     </section>
 
-    <!-- Latest Forms Section -->
-    <section id="forms" class="max-w-7xl mx-auto px-4 py-12">
-        <h2 class="text-2xl font-bold border-l-4 border-brandPink pl-3 mb-8">Latest Forms & Notifications</h2>
+    <!-- Main Categories Section (Grid Like Online Update STM) -->
+    <main class="max-w-7xl mx-auto px-4 py-8">
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Form Card 1 -->
-            <div class="border border-gray-100 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
-                <div class="h-48 bg-gray-100 flex items-center justify-center overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=500&q=80" alt="Scholarship Banner" class="w-full h-full object-cover">
+
+            <!-- 1. Latest Updates Box -->
+            <div id="latest-updates" class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
+                <div class="pink-gradient text-white p-3 font-bold text-lg flex items-center gap-2">
+                    <i class="fa-solid fa-bell"></i> Latest Updates
                 </div>
-                <div class="p-5">
-                    <span class="text-xs font-bold text-red-500 bg-red-100 px-2 py-1 rounded-md">Last Date: 31 Aug 2026</span>
-                    <h3 class="text-lg font-bold text-brandBlack mt-2">NSP Scholarship 2026-27</h3>
-                    <p class="text-gray-600 text-sm mt-1">National Scholarship Portal online application for pre & post matric students.</p>
-                    <div class="mt-4 flex justify-between items-center">
-                        <a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" target="_blank" class="pink-gradient text-white text-sm px-4 py-2 rounded-lg font-bold flex items-center gap-2">
-                            <i class="fa-brands fa-whatsapp"></i> Apply via WhatsApp
-                        </a>
-                    </div>
-                </div>
+                <ul class="divide-y divide-gray-100 text-sm">
+                    <li class="p-3 hover:bg-pink-50 transition"><a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" class="hover:text-brandPink font-medium">LNMU UG Admission Online Apply - Full Details</a></li>
+                    <li class="p-3 hover:bg-pink-50 transition"><a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" class="hover:text-brandPink font-medium">Bihar Paramedical Counselling Online Registration</a></li>
+                    <li class="p-3 hover:bg-pink-50 transition"><a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" class="hover:text-brandPink font-medium">Bihar Dakhil Kharij Online Apply Complete Process</a></li>
+                    <li class="p-3 hover:bg-pink-50 transition"><a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" class="hover:text-brandPink font-medium">Bihar Board NSP Scholarship Merit List Details</a></li>
+                </ul>
             </div>
+
+            <!-- 2. Latest Jobs Box -->
+            <div id="latest-jobs" class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
+                <div class="bg-blue-600 text-white p-3 font-bold text-lg flex items-center gap-2">
+                    <i class="fa-solid fa-briefcase"></i> Latest Jobs
+                </div>
+                <ul class="divide-y divide-gray-100 text-sm">
+                    <li class="p-3 hover:bg-blue-50 transition"><a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" class="hover:text-blue-600 font-medium">Bihar Ration Dealer Bharti 10th Pass Apply</a></li>
+                    <li class="p-3 hover:bg-blue-50 transition"><a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" class="hover:text-blue-600 font-medium">CSC Aadhar Supervisor Vacancy 12th Pass</a></li>
+                    <li class="p-3 hover:bg-blue-50 transition"><a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" class="hover:text-blue-600 font-medium">Indian Air Force Agniveervayu Recruitment</a></li>
+                    <li class="p-3 hover:bg-blue-50 transition"><a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" class="hover:text-blue-600 font-medium">IBPS Clerk Recruitment Online Form</a></li>
+                </ul>
+            </div>
+
+            <!-- 3. Sarkari Yojana Box -->
+            <div id="sarkari-yojana" class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
+                <div class="bg-green-600 text-white p-3 font-bold text-lg flex items-center gap-2">
+                    <i class="fa-solid fa-landmark"></i> Sarkari Yojana
+                </div>
+                <ul class="divide-y divide-gray-100 text-sm">
+                    <li class="p-3 hover:bg-green-50 transition"><a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" class="hover:text-green-600 font-medium">Bihar Smart PDS Ration Card Details</a></li>
+                    <li class="p-3 hover:bg-green-50 transition"><a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" class="hover:text-green-600 font-medium">Bihar Sauchalay Yojana Online Apply (₹12,000)</a></li>
+                    <li class="p-3 hover:bg-green-50 transition"><a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" class="hover:text-green-600 font-medium">Bihar Free Battery Tricycle Scheme</a></li>
+                    <li class="p-3 hover:bg-green-50 transition"><a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" class="hover:text-green-600 font-medium">Voter ID Correction Online Process</a></li>
+                </ul>
+            </div>
+
+            <!-- 4. Scholarship Box -->
+            <div id="scholarship" class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
+                <div class="bg-purple-600 text-white p-3 font-bold text-lg flex items-center gap-2">
+                    <i class="fa-solid fa-graduation-cap"></i> Scholarship
+                </div>
+                <ul class="divide-y divide-gray-100 text-sm">
+                    <li class="p-3 hover:bg-purple-50 transition"><a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" class="hover:text-purple-600 font-medium">PM YASASVI Scholarship Yojana Online Apply</a></li>
+                    <li class="p-3 hover:bg-purple-50 transition"><a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" class="hover:text-purple-600 font-medium">National Scholarship Portal (NSP) Application</a></li>
+                    <li class="p-3 hover:bg-purple-50 transition"><a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" class="hover:text-purple-600 font-medium">Bihar Post Matric Scholarship Apply Online</a></li>
+                    <li class="p-3 hover:bg-purple-50 transition"><a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" class="hover:text-purple-600 font-medium">Bihar Board 10th/12th Pass Scholarship</a></li>
+                </ul>
+            </div>
+
+            <!-- 5. Admit Card Box -->
+            <div id="admit-card" class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
+                <div class="bg-orange-500 text-white p-3 font-bold text-lg flex items-center gap-2">
+                    <i class="fa-solid fa-id-card"></i> Admit Card
+                </div>
+                <ul class="divide-y divide-gray-100 text-sm">
+                    <li class="p-3 hover:bg-orange-50 transition"><a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" class="hover:text-orange-600 font-medium">Railway Group D Admit Card Download Link</a></li>
+                    <li class="p-3 hover:bg-orange-50 transition"><a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" class="hover:text-orange-600 font-medium">Bihar Police Constable Admit Card</a></li>
+                    <li class="p-3 hover:bg-orange-50 transition"><a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" class="hover:text-orange-600 font-medium">Bihar Board Dummy Registration Card Download</a></li>
+                    <li class="p-3 hover:bg-orange-50 transition"><a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" class="hover:text-orange-600 font-medium">Patna High Court Admit Card Release</a></li>
+                </ul>
+            </div>
+
+            <!-- 6. Results Box -->
+            <div id="results" class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
+                <div class="bg-red-600 text-white p-3 font-bold text-lg flex items-center gap-2">
+                    <i class="fa-solid fa-square-poll-vertical"></i> Results
+                </div>
+                <ul class="divide-y divide-gray-100 text-sm">
+                    <li class="p-3 hover:bg-red-50 transition"><a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" class="hover:text-red-600 font-medium">Bihar Polytechnic Seat Allotment Result</a></li>
+                    <li class="p-3 hover:bg-red-50 transition"><a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" class="hover:text-red-600 font-medium">Bihar Deled Exam Result Official Update</a></li>
+                    <li class="p-3 hover:bg-red-50 transition"><a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" class="hover:text-red-600 font-medium">Bihar B.Ed 1st Merit List Allotment Letter</a></li>
+                    <li class="p-3 hover:bg-red-50 transition"><a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" class="hover:text-red-600 font-medium">Railway Group D Application Status & Result</a></li>
+                </ul>
+            </div>
+
         </div>
-    </section>
+
+    </main>
 
     <!-- Services Section -->
-    <section id="services" class="bg-gray-50 py-12 px-4">
+    <section id="services" class="bg-white py-12 px-4 border-t border-gray-200">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-2xl font-bold border-l-4 border-brandPink pl-3 mb-8">Our Cyber Cafe Services</h2>
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                <div class="bg-white p-4 rounded-xl shadow-sm text-center font-semibold hover:border-brandPink border">Aadhaar Services</div>
-                <div class="bg-white p-4 rounded-xl shadow-sm text-center font-semibold hover:border-brandPink border">PAN Card</div>
-                <div class="bg-white p-4 rounded-xl shadow-sm text-center font-semibold hover:border-brandPink border">Voter ID</div>
-                <div class="bg-white p-4 rounded-xl shadow-sm text-center font-semibold hover:border-brandPink border">Passport Application</div>
-                <div class="bg-white p-4 rounded-xl shadow-sm text-center font-semibold hover:border-brandPink border">Income / Caste Cert.</div>
-                <div class="bg-white p-4 rounded-xl shadow-sm text-center font-semibold hover:border-brandPink border">Ayushman Card</div>
-                <div class="bg-white p-4 rounded-xl shadow-sm text-center font-semibold hover:border-brandPink border">Ticket Booking</div>
-                <div class="bg-white p-4 rounded-xl shadow-sm text-center font-semibold hover:border-brandPink border">Resume Making</div>
+                <div class="bg-gray-50 p-4 rounded-xl text-center font-semibold border hover:border-brandPink">Aadhaar Services</div>
+                <div class="bg-gray-50 p-4 rounded-xl text-center font-semibold border hover:border-brandPink">PAN Card</div>
+                <div class="bg-gray-50 p-4 rounded-xl text-center font-semibold border hover:border-brandPink">Voter ID</div>
+                <div class="bg-gray-50 p-4 rounded-xl text-center font-semibold border hover:border-brandPink">Passport Application</div>
+                <div class="bg-gray-50 p-4 rounded-xl text-center font-semibold border hover:border-brandPink">Income / Caste Cert.</div>
+                <div class="bg-gray-50 p-4 rounded-xl text-center font-semibold border hover:border-brandPink">Ayushman Card</div>
+                <div class="bg-gray-50 p-4 rounded-xl text-center font-semibold border hover:border-brandPink">Ticket Booking</div>
+                <div class="bg-gray-50 p-4 rounded-xl text-center font-semibold border hover:border-brandPink">Resume Making</div>
             </div>
         </div>
     </section>
 
-    <!-- Contact & Footer -->
-    <footer id="contact" class="bg-brandBlack text-white py-12 px-4 mt-12">
+    <!-- Footer -->
+    <footer id="contact" class="bg-brandBlack text-white py-12 px-4">
         <div class="max-w-7xl mx-auto text-center space-y-4">
             <div class="text-2xl font-bold">THE STUDENT POINT</div>
             <p class="text-gray-400 text-sm">Your One-Stop Solution for Online Forms, Certificates & Educational Updates.</p>
             
-            <!-- Contact Info / Number Section -->
             <div class="pt-4 flex flex-col items-center gap-3">
                 <p class="text-lg font-semibold text-gray-200">
-                    <i class="fa-solid fa-phone text-brandPink mr-2"></i> Contact / Helpline Number: 
-                    <span class="text-white font-bold">+918210871416</span>
+                    <i class="fa-solid fa-phone text-brandPink mr-2"></i> Helpline: 
+                    <span class="text-white font-bold">+91 8210871416</span>
                 </p>
                 <a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" target="_blank" class="inline-flex items-center gap-2 pink-gradient text-white px-6 py-2 rounded-full font-bold shadow-lg">
                     <i class="fa-brands fa-whatsapp text-xl"></i> Join WhatsApp Channel
