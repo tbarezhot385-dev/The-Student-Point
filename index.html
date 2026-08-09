@@ -353,7 +353,9 @@
                     item.style.display = "none";
                 }
             });
-        } // Tab Filtering Logic (Show single category & hide others)
+        }
+
+        // Tab Filtering Logic (Show selected section only)
         function showCategory(categoryId) {
             const allBoxes = document.querySelectorAll('.category-box');
 
@@ -367,10 +369,10 @@
                 }
             }
 
-            // Smooth scroll to the main content area
-            const contentArea = document.getElementById('latest-updates') || document.querySelector('main');
-            if (contentArea) {
-                contentArea.scrollIntoView({ behavior: 'smooth' });
+            // Smooth scroll to the content area
+            const mainContent = document.querySelector('main');
+            if (mainContent) {
+                mainContent.scrollIntoView({ behavior: 'smooth' });
             }
         }
     </script>
