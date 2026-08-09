@@ -353,6 +353,25 @@
                     item.style.display = "none";
                 }
             });
+        } // Tab Filtering Logic (Show single category & hide others)
+        function showCategory(categoryId) {
+            const allBoxes = document.querySelectorAll('.category-box');
+
+            if (categoryId === 'all') {
+                allBoxes.forEach(box => box.style.display = 'block');
+            } else {
+                allBoxes.forEach(box => box.style.display = 'none');
+                const selectedBox = document.getElementById(categoryId);
+                if (selectedBox) {
+                    selectedBox.style.display = 'block';
+                }
+            }
+
+            // Smooth scroll to the main content area
+            const contentArea = document.getElementById('latest-updates') || document.querySelector('main');
+            if (contentArea) {
+                contentArea.scrollIntoView({ behavior: 'smooth' });
+            }
         }
     </script>
 </body>
