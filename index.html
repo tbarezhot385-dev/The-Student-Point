@@ -60,17 +60,17 @@
 
             <!-- Desktop Navigation -->
             <nav class="hidden md:flex space-x-6 text-sm font-semibold text-gray-700">
-                <a href="#" class="transition-colors hover:text-brandPink">Home</a>
-                <a href="#latest-jobs" class="transition-colors hover:text-brandPink">Latest Jobs</a>
-                <a href="#scholarship" class="transition-colors hover:text-brandPink">Scholarship</a>
-                <a href="#sarkari-yojana" class="transition-colors hover:text-brandPink">Sarkari Yojana</a>
-                <a href="#admit-card" class="transition-colors hover:text-brandPink">Admit Card</a>
-                <a href="#results" class="transition-colors hover:text-brandPink">Results</a>
+                <button onclick="showCategory('all')" class="transition-colors hover:text-brandPink focus:outline-none">Home</button>
+                <button onclick="showCategory('latest-jobs')" class="transition-colors hover:text-brandPink focus:outline-none">Latest Jobs</button>
+                <button onclick="showCategory('scholarship')" class="transition-colors hover:text-brandPink focus:outline-none">Scholarship</button>
+                <button onclick="showCategory('sarkari-yojana')" class="transition-colors hover:text-brandPink focus:outline-none">Sarkari Yojana</button>
+                <button onclick="showCategory('admit-card')" class="transition-colors hover:text-brandPink focus:outline-none">Admit Card</button>
+                <button onclick="showCategory('results')" class="transition-colors hover:text-brandPink focus:outline-none">Results</button>
             </nav>
 
             <div class="flex items-center gap-3">
                 <!-- WhatsApp Channel Button -->
-                <a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" target="_blank" class="pink-gradient text-white px-4 py-2 rounded-full font-bold shadow-lg hover:opacity-90 flex items-center gap-2 text-sm transition-transform active:scale-95">
+                <a href="url?id=6" target="_blank" class="pink-gradient text-white px-4 py-2 rounded-full font-bold shadow-lg hover:opacity-90 flex items-center gap-2 text-sm transition-transform active:scale-95">
                     <i class="fa-brands fa-whatsapp text-lg"></i>
                     <span class="hidden sm:inline">WhatsApp Channel</span>
                 </a>
@@ -84,12 +84,12 @@
 
         <!-- Mobile Dropdown Menu -->
         <nav id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 pt-2 pb-4 space-y-2 text-sm font-semibold text-gray-700 shadow-lg">
-            <a href="#" class="block py-2 px-3 rounded-lg hover:bg-pink-50 hover:text-brandPink">Home</a>
-            <a href="#latest-jobs" class="block py-2 px-3 rounded-lg hover:bg-pink-50 hover:text-brandPink">Latest Jobs</a>
-            <a href="#scholarship" class="block py-2 px-3 rounded-lg hover:bg-pink-50 hover:text-brandPink">Scholarship</a>
-            <a href="#sarkari-yojana" class="block py-2 px-3 rounded-lg hover:bg-pink-50 hover:text-brandPink">Sarkari Yojana</a>
-            <a href="#admit-card" class="block py-2 px-3 rounded-lg hover:bg-pink-50 hover:text-brandPink">Admit Card</a>
-            <a href="#results" class="block py-2 px-3 rounded-lg hover:bg-pink-50 hover:text-brandPink">Results</a>
+            <button onclick="showCategory('all'); menuToggle.click();" class="block w-full text-left py-2 px-3 rounded-lg hover:bg-pink-50 hover:text-brandPink">Home</button>
+            <button onclick="showCategory('latest-jobs'); menuToggle.click();" class="block w-full text-left py-2 px-3 rounded-lg hover:bg-pink-50 hover:text-brandPink">Latest Jobs</button>
+            <button onclick="showCategory('scholarship'); menuToggle.click();" class="block w-full text-left py-2 px-3 rounded-lg hover:bg-pink-50 hover:text-brandPink">Scholarship</button>
+            <button onclick="showCategory('sarkari-yojana'); menuToggle.click();" class="block w-full text-left py-2 px-3 rounded-lg hover:bg-pink-50 hover:text-brandPink">Sarkari Yojana</button>
+            <button onclick="showCategory('admit-card'); menuToggle.click();" class="block w-full text-left py-2 px-3 rounded-lg hover:bg-pink-50 hover:text-brandPink">Admit Card</button>
+            <button onclick="showCategory('results'); menuToggle.click();" class="block w-full text-left py-2 px-3 rounded-lg hover:bg-pink-50 hover:text-brandPink">Results</button>
         </nav>
     </header>
 
@@ -103,15 +103,16 @@
         </marquee>
     </div>
 
-    <!-- Category Quick Links Bar -->
+    <!-- Category Quick Links Bar (Notice ke niche wale links) -->
     <div class="bg-brandBlack py-2 text-white overflow-x-auto no-scrollbar border-b border-gray-800">
         <div class="max-w-7xl mx-auto px-4 flex space-x-6 text-sm font-semibold whitespace-nowrap">
-            <a href="#latest-updates" class="hover:text-brandPink transition-colors"><i class="fa-solid fa-bell text-brandPink mr-1"></i> Latest Updates</a>
-            <a href="#latest-jobs" class="hover:text-brandPink transition-colors"><i class="fa-solid fa-briefcase text-brandPink mr-1"></i> Latest Jobs</a>
-            <a href="#scholarship" class="hover:text-brandPink transition-colors"><i class="fa-solid fa-graduation-cap text-brandPink mr-1"></i> Scholarship</a>
-            <a href="#sarkari-yojana" class="hover:text-brandPink transition-colors"><i class="fa-solid fa-landmark text-brandPink mr-1"></i> Sarkari Yojana</a>
-            <a href="#admit-card" class="hover:text-brandPink transition-colors"><i class="fa-solid fa-id-card text-brandPink mr-1"></i> Admit Card</a>
-            <a href="#results" class="hover:text-brandPink transition-colors"><i class="fa-solid fa-square-poll-vertical text-brandPink mr-1"></i> Results</a>
+            <button onclick="showCategory('all')" class="hover:text-brandPink focus:outline-none transition-colors"><i class="fa-solid fa-border-all text-brandPink mr-1"></i> Show All</button>
+            <button onclick="showCategory('latest-updates')" class="hover:text-brandPink focus:outline-none transition-colors"><i class="fa-solid fa-bell text-brandPink mr-1"></i> Latest Updates</button>
+            <button onclick="showCategory('latest-jobs')" class="hover:text-brandPink focus:outline-none transition-colors"><i class="fa-solid fa-briefcase text-brandPink mr-1"></i> Latest Jobs</button>
+            <button onclick="showCategory('scholarship')" class="hover:text-brandPink focus:outline-none transition-colors"><i class="fa-solid fa-graduation-cap text-brandPink mr-1"></i> Scholarship</button>
+            <button onclick="showCategory('sarkari-yojana')" class="hover:text-brandPink focus:outline-none transition-colors"><i class="fa-solid fa-landmark text-brandPink mr-1"></i> Sarkari Yojana</button>
+            <button onclick="showCategory('admit-card')" class="hover:text-brandPink focus:outline-none transition-colors"><i class="fa-solid fa-id-card text-brandPink mr-1"></i> Admit Card</button>
+            <button onclick="showCategory('results')" class="hover:text-brandPink focus:outline-none transition-colors"><i class="fa-solid fa-square-poll-vertical text-brandPink mr-1"></i> Results</button>
         </div>
     </div>
 
@@ -185,12 +186,12 @@
                         </a>
                     </li>
                     <li class="p-3.5 hover:bg-pink-50 transition">
-                        <a href="https://bceceboard.bihar.gov.in/" target="_blank" class="hover:text-brandPink font-medium flex items-center justify-between gap-2">
+                        <a href="url?id=9" target="_blank" class="hover:text-brandPink font-medium flex items-center justify-between gap-2">
                             <span>Bihar Paramedical Counselling Online Registration</span>
                             <span class="bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded animate-pulse shrink-0">NEW 🔴</span>
                         </a>
                     </li>
-                    <li class="p-3.5 hover:bg-pink-50 transition"><a href="https://biharbhumi.bihar.gov.in/" target="_blank" class="hover:text-brandPink font-medium block">Bihar Dakhil Kharij Online Portal</a></li>
+                    <li class="p-3.5 hover:bg-pink-50 transition"><a href="url?id=10" target="_blank" class="hover:text-brandPink font-medium block">Bihar Dakhil Kharij Online Portal</a></li>
                     <li class="p-3.5 hover:bg-pink-50 transition"><a href="https://scholarships.gov.in/" target="_blank" class="hover:text-brandPink font-medium block">National Scholarship Portal Official Site</a></li>
                 </ul>
             </div>
@@ -222,7 +223,7 @@
                     <li class="p-3.5 hover:bg-green-50 transition"><a href="https://epds.bihar.gov.in/" target="_blank" class="hover:text-green-600 font-medium block">Bihar Smart PDS Ration Card Portal</a></li>
                     <li class="p-3.5 hover:bg-green-50 transition"><a href="https://sbm.gov.in/" target="_blank" class="hover:text-green-600 font-medium block">Swachh Bharat Sauchalay Yojana (₹12,000)</a></li>
                     <li class="p-3.5 hover:bg-green-50 transition"><a href="https://voters.eci.gov.in/" target="_blank" class="hover:text-green-600 font-medium block">Voter ID Card Online Portal (Correction/New)</a></li>
-                    <li class="p-3.5 hover:bg-green-50 transition"><a href="https://pmjay.gov.in/" target="_blank" class="hover:text-green-600 font-medium block">Ayushman Bharat Card Portal</a></li>
+                    <li class="p-3.5 hover:bg-green-50 transition"><a href="url?id=18" target="_blank" class="hover:text-green-600 font-medium block">Ayushman Bharat Card Portal</a></li>
                 </ul>
             </div>
 
@@ -233,7 +234,7 @@
                 </div>
                 <ul class="divide-y divide-gray-100 text-sm">
                     <li class="p-3.5 hover:bg-purple-50 transition">
-                        <a href="https://pmsonline.bih.nic.in/" target="_blank" class="hover:text-purple-600 font-medium flex items-center justify-between gap-2">
+                        <a href="url?id=19" target="_blank" class="hover:text-purple-600 font-medium flex items-center justify-between gap-2">
                             <span>Bihar Post Matric Scholarship Portal</span>
                             <span class="bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded animate-pulse shrink-0">NEW 🔴</span>
                         </a>
@@ -251,9 +252,9 @@
                 </div>
                 <ul class="divide-y divide-gray-100 text-sm">
                     <li class="p-3.5 hover:bg-orange-50 transition"><a href="https://rrbapply.gov.in/" target="_blank" class="hover:text-orange-600 font-medium block">Railway RRB Recruitment Portal</a></li>
-                    <li class="p-3.5 hover:bg-orange-50 transition"><a href="https://csbc.bihar.gov.in/" target="_blank" class="hover:text-orange-600 font-medium block">Bihar Police CSBC Admit Card Portal</a></li>
+                    <li class="p-3.5 hover:bg-orange-50 transition"><a href="url?id=23" target="_blank" class="hover:text-orange-600 font-medium block">Bihar Police CSBC Admit Card Portal</a></li>
                     <li class="p-3.5 hover:bg-orange-50 transition"><a href="https://biharboardonline.bihar.gov.in/" target="_blank" class="hover:text-orange-600 font-medium block">Bihar Board Examination Portal</a></li>
-                    <li class="p-3.5 hover:bg-orange-50 transition"><a href="https://patnahighcourt.gov.in/" target="_blank" class="hover:text-orange-600 font-medium block">Patna High Court Recruitment Portal</a></li>
+                    <li class="p-3.5 hover:bg-orange-50 transition"><a href="https://tbarezhot385-dev.github.io/The-Student-Point/#scholarship5" target="_blank" class="hover:text-orange-600 font-medium block">Patna High Court Recruitment Portal</a></li>
                 </ul>
             </div>
 
@@ -263,9 +264,9 @@
                     <i class="fa-solid fa-square-poll-vertical"></i> Results
                 </div>
                 <ul class="divide-y divide-gray-100 text-sm">
-                    <li class="p-3.5 hover:bg-red-50 transition"><a href="https://bceceboard.bihar.gov.in/" target="_blank" class="hover:text-red-600 font-medium block">Bihar BCECE Board Official Results</a></li>
+                    <li class="p-3.5 hover:bg-red-50 transition"><a href="url?id=9" target="_blank" class="hover:text-red-600 font-medium block">Bihar BCECE Board Official Results</a></li>
                     <li class="p-3.5 hover:bg-red-50 transition"><a href="https://biharboardonline.bihar.gov.in/" target="_blank" class="hover:text-red-600 font-medium block">Bihar Board 10th / 12th Results</a></li>
-                    <li class="p-3.5 hover:bg-red-50 transition"><a href="http://biharcetbed-lnmu.in/" target="_blank" class="hover:text-red-600 font-medium block">Bihar B.Ed Entrance Exam Result Portal</a></li>
+                    <li class="p-3.5 hover:bg-red-50 transition"><a href="url?id=26" target="_blank" class="hover:text-red-600 font-medium block">Bihar B.Ed Entrance Exam Result Portal</a></li>
                     <li class="p-3.5 hover:bg-red-50 transition"><a href="https://rrbapply.gov.in/" target="_blank" class="hover:text-red-600 font-medium block">Railway Recruitment Board Status & Results</a></li>
                 </ul>
             </div>
@@ -284,10 +285,10 @@
                 <a href="https://www.onlineservices.nsdl.com/paam/endUserRegisterContact.html" target="_blank" class="bg-pink-50 p-4 rounded-xl text-center font-semibold border border-pink-200 hover:border-brandPink hover:bg-pink-100 hover:shadow-md transition block text-brandBlack"> PAN Card Portal </a>
                 <a href="https://voters.eci.gov.in/" target="_blank" class="bg-pink-50 p-4 rounded-xl text-center font-semibold border border-pink-200 hover:border-brandPink hover:bg-pink-100 hover:shadow-md transition block text-brandBlack"> Voter ID Services </a>
                 <a href="https://www.passportindia.gov.in/" target="_blank" class="bg-pink-50 p-4 rounded-xl text-center font-semibold border border-pink-200 hover:border-brandPink hover:bg-pink-100 hover:shadow-md transition block text-brandBlack"> Passport Seva </a>
-                <a href="https://serviceonline.bihar.gov.in/" target="_blank" class="bg-pink-50 p-4 rounded-xl text-center font-semibold border border-pink-200 hover:border-brandPink hover:bg-pink-100 hover:shadow-md transition block text-brandBlack"> RTPS Bihar (Income/Caste) </a>
+                <a href="url?id=30" target="_blank" class="bg-pink-50 p-4 rounded-xl text-center font-semibold border border-pink-200 hover:border-brandPink hover:bg-pink-100 hover:shadow-md transition block text-brandBlack"> RTPS Bihar (Income/Caste) </a>
                 <a href="https://beneficiary.nha.gov.in/" target="_blank" class="bg-pink-50 p-4 rounded-xl text-center font-semibold border border-pink-200 hover:border-brandPink hover:bg-pink-100 hover:shadow-md transition block text-brandBlack"> Ayushman Card Portal </a>
                 <a href="https://www.irctc.co.in/" target="_blank" class="bg-pink-50 p-4 rounded-xl text-center font-semibold border border-pink-200 hover:border-brandPink hover:bg-pink-100 hover:shadow-md transition block text-brandBlack"> IRCTC Ticket Booking </a>
-                <a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" target="_blank" class="bg-pink-50 p-4 rounded-xl text-center font-semibold border border-pink-200 hover:border-brandPink hover:bg-pink-100 hover:shadow-md transition block text-brandBlack"> Resume Making </a>
+                <a href="url?id=6" target="_blank" class="bg-pink-50 p-4 rounded-xl text-center font-semibold border border-pink-200 hover:border-brandPink hover:bg-pink-100 hover:shadow-md transition block text-brandBlack"> Resume Making </a>
             </div>
         </div>
     </section>
@@ -329,16 +330,18 @@
         const mobileMenu = document.getElementById('mobile-menu');
         const menuIcon = document.getElementById('menu-icon');
 
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            if (mobileMenu.classList.contains('hidden')) {
-                menuIcon.classList.remove('fa-xmark');
-                menuIcon.classList.add('fa-bars');
-            } else {
-                menuIcon.classList.remove('fa-bars');
-                menuIcon.classList.add('fa-xmark');
-            }
-        });
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                if (mobileMenu.classList.contains('hidden')) {
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                } else {
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-xmark');
+                }
+            });
+        }
 
         // Search Filter Logic
         function filterLinks() {
@@ -355,21 +358,24 @@
             });
         }
 
-        // Tab Filtering Logic (Show selected section only)
+        // Single Section View Logic (Click krne pr baki hidden ho jaye)
         function showCategory(categoryId) {
             const allBoxes = document.querySelectorAll('.category-box');
 
             if (categoryId === 'all') {
                 allBoxes.forEach(box => box.style.display = 'block');
             } else {
+                // 1. Sabhi boxes ko hide karein
                 allBoxes.forEach(box => box.style.display = 'none');
+                
+                // 2. Sirf chuney gaye ID wale box ko dikhaayein
                 const selectedBox = document.getElementById(categoryId);
                 if (selectedBox) {
                     selectedBox.style.display = 'block';
                 }
             }
 
-            // Smooth scroll to the content area
+            // Smooth scroll to Main Section
             const mainContent = document.querySelector('main');
             if (mainContent) {
                 mainContent.scrollIntoView({ behavior: 'smooth' });
