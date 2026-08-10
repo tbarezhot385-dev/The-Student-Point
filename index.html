@@ -2,706 +2,155 @@
 <html lang="hi" class="scroll-smooth">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>THE STUDENT POINT - Cyber Cafe & Online Services</title>
-<meta name="description" content="THE STUDENT POINT - Bihar Latest Jobs, Scholarship, Sarkari Yojana, Admit Card, Results, Resume और Cyber Cafe Online Services.">
-<meta name="keywords" content="THE STUDENT POINT, Bihar Job, Scholarship, Sarkari Yojana, Admit Card, Result, Resume, Cyber Cafe">
-
+<meta name="description" content="THE STUDENT POINT - Online Forms, Jobs, Scholarship, Sarkari Yojana, Admit Card, Results and Cyber Cafe Services.">
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-
-<script>
-tailwind.config = {
-    theme: {
-        extend: {
-            colors: {
-                brandPink: '#FF4DA6',
-                brandBlack: '#111111'
-            }
-        }
-    }
-}
-</script>
-
+<script>tailwind.config={theme:{extend:{colors:{brandPink:'#FF4DA6',brandPurple:'#7B2CBF',brandBlack:'#111111'}}}}</script>
 <style>
-:root{--pink:#FF4DA6;--pink2:#FF1780;--black:#111111}
-*{box-sizing:border-box}
-body{font-family:Arial,Helvetica,sans-serif}
-.pink-gradient{background:linear-gradient(135deg,var(--pink),var(--pink2))}
-.hero-bg{
-    background-image:linear-gradient(rgba(17,17,17,.82),rgba(17,17,17,.9)),
-    url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1920&auto=format&fit=crop');
-    background-size:cover;background-position:center
-}
-.no-scrollbar::-webkit-scrollbar{display:none}
-.no-scrollbar{-ms-overflow-style:none;scrollbar-width:none}
-.payment-section{scroll-margin-top:90px}
-.modal-bg{background:rgba(0,0,0,.65)}
-.card-hover{transition:.25s}
-.card-hover:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(255,77,166,.15)}
-.payment-fab{
-    position:fixed;right:18px;bottom:20px;z-index:60;
-    width:58px;height:58px;border-radius:50%;
-    display:flex;align-items:center;justify-content:center;
-    box-shadow:0 8px 25px rgba(0,0,0,.25)
-}
-#qrcode img,#qrcode canvas{margin:auto}
+.pink-gradient{background:linear-gradient(135deg,#FF4DA6,#C026D3 55%,#7B2CBF)}
+.hero-bg{background-image:linear-gradient(rgba(17,17,17,.82),rgba(17,17,17,.9)),url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1920&auto=format&fit=crop');background-size:cover;background-position:center}
+.no-scrollbar::-webkit-scrollbar{display:none}.no-scrollbar{scrollbar-width:none}.modal-bg{background:rgba(0,0,0,.68)}.payment-section{scroll-margin-top:90px}.service-card{transition:.2s}.service-card:hover{transform:translateY(-3px)}
 </style>
 </head>
+<body class="bg-gray-100 text-gray-800 font-sans flex flex-col min-h-screen">
 
-<body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
-
-<!-- HEADER -->
-<header class="sticky top-0 z-50 bg-white shadow-md">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center gap-3">
-        <button onclick="showCategory('all');window.scrollTo({top:0,behavior:'smooth'})"
-                class="text-xl md:text-2xl font-black text-brandBlack tracking-tight text-left">
-            THE STUDENT <span class="text-brandPink">POINT</span>
-        </button>
-
-        <nav class="hidden lg:flex items-center gap-5 text-sm font-bold">
-            <button onclick="showCategory('all')" class="hover:text-brandPink">Home</button>
-            <button onclick="showCategory('latest-updates')" class="hover:text-brandPink">Latest Updates</button>
-            <button onclick="showCategory('latest-jobs')" class="hover:text-brandPink">Latest Jobs</button>
-            <button onclick="showCategory('scholarship')" class="hover:text-brandPink">Scholarship</button>
-            <button onclick="showCategory('sarkari-yojana')" class="hover:text-brandPink">Sarkari Yojana</button>
-            <button onclick="showCategory('admit-card')" class="hover:text-brandPink">Admit Card</button>
-            <button onclick="showCategory('results')" class="hover:text-brandPink">Results</button>
-        </nav>
-
-        <div class="flex items-center gap-2">
-            <a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" target="_blank" rel="noopener"
-               class="pink-gradient text-white px-3 md:px-4 py-2 rounded-full font-bold shadow flex items-center gap-2 text-sm">
-                <i class="fa-brands fa-whatsapp text-lg"></i>
-                <span class="hidden sm:inline">WhatsApp Channel</span>
-            </a>
-            <button onclick="toggleMobileMenu()" class="lg:hidden text-brandBlack text-2xl p-1">
-                <i id="menu-icon" class="fa-solid fa-bars"></i>
-            </button>
-        </div>
-    </div>
-
-    <nav id="mobile-menu" class="hidden lg:hidden bg-white border-t px-4 pt-2 pb-4 space-y-1 text-sm font-bold">
-        <button onclick="showCategory('all');closeMobileMenu()" class="w-full text-left py-2.5 px-3 rounded-lg hover:bg-pink-50">Home</button>
-        <button onclick="showCategory('latest-updates');closeMobileMenu()" class="w-full text-left py-2.5 px-3 rounded-lg hover:bg-pink-50">Latest Updates</button>
-        <button onclick="showCategory('latest-jobs');closeMobileMenu()" class="w-full text-left py-2.5 px-3 rounded-lg hover:bg-pink-50">Latest Jobs</button>
-        <button onclick="showCategory('scholarship');closeMobileMenu()" class="w-full text-left py-2.5 px-3 rounded-lg hover:bg-pink-50">Scholarship</button>
-        <button onclick="showCategory('sarkari-yojana');closeMobileMenu()" class="w-full text-left py-2.5 px-3 rounded-lg hover:bg-pink-50">Sarkari Yojana</button>
-        <button onclick="showCategory('admit-card');closeMobileMenu()" class="w-full text-left py-2.5 px-3 rounded-lg hover:bg-pink-50">Admit Card</button>
-        <button onclick="showCategory('results');closeMobileMenu()" class="w-full text-left py-2.5 px-3 rounded-lg hover:bg-pink-50">Results</button>
-        <button onclick="showPayment();closeMobileMenu()" class="w-full text-left py-2.5 px-3 rounded-lg bg-pink-50 text-brandPink">
-            <i class="fa-solid fa-qrcode mr-2"></i> Payment QR
-        </button>
-    </nav>
-</header>
-
-<!-- NOTICE -->
-<div class="bg-brandBlack text-white text-sm font-bold flex items-center overflow-hidden">
-    <div class="pink-gradient px-4 py-2 text-xs uppercase tracking-wider shrink-0">
-        <i class="fa-solid fa-bolt mr-1"></i> Notice
-    </div>
-    <marquee class="py-1" scrollamount="6">
-        🔴 Latest Jobs | 🔴 Scholarship Updates | 🔴 Admit Card | 🔴 Sarkari Yojana | 🔴 Online Services
-    </marquee>
-</div>
-
-<!-- QUICK LINKS -->
-<div class="bg-white border-b border-pink-100 overflow-x-auto no-scrollbar">
-    <div class="max-w-7xl mx-auto px-4 py-2 flex gap-5 text-sm font-bold whitespace-nowrap">
-        <button onclick="showCategory('all')" class="hover:text-brandPink"><i class="fa-solid fa-border-all text-brandPink mr-1"></i> All</button>
-        <button onclick="showCategory('latest-updates')" class="hover:text-brandPink"><i class="fa-solid fa-bell text-brandPink mr-1"></i> Updates</button>
-        <button onclick="showCategory('latest-jobs')" class="hover:text-brandPink"><i class="fa-solid fa-briefcase text-brandPink mr-1"></i> Jobs</button>
-        <button onclick="showCategory('scholarship')" class="hover:text-brandPink"><i class="fa-solid fa-graduation-cap text-brandPink mr-1"></i> Scholarship</button>
-        <button onclick="showCategory('sarkari-yojana')" class="hover:text-brandPink"><i class="fa-solid fa-landmark text-brandPink mr-1"></i> Yojana</button>
-        <button onclick="showCategory('admit-card')" class="hover:text-brandPink"><i class="fa-solid fa-id-card text-brandPink mr-1"></i> Admit Card</button>
-        <button onclick="showCategory('results')" class="hover:text-brandPink"><i class="fa-solid fa-square-poll-vertical text-brandPink mr-1"></i> Results</button>
-        <a href="https://www.resumeground.com/create-resume" target="_blank" rel="noopener" class="hover:text-brandPink">
-            <i class="fa-solid fa-file-lines text-brandPink mr-1"></i> Resume बनवाएँ
-        </a>
-    </div>
-</div>
-
-<!-- HERO -->
-<section class="hero-bg text-white py-14 px-4 text-center">
-    <div class="max-w-4xl mx-auto space-y-6">
-        <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 text-sm font-bold">
-            <span class="w-2 h-2 rounded-full bg-brandPink animate-pulse"></span>
-            THE STUDENT POINT
-        </div>
-        <h1 class="text-3xl md:text-5xl font-black leading-tight">
-            Online Form, Jobs & <span class="text-brandPink">Scholarship Information</span>
-        </h1>
-        <p class="text-gray-200 text-base md:text-lg">
-            सभी जरूरी ऑनलाइन सेवाएँ, सरकारी योजना, नौकरी, स्कॉलरशिप, एडमिट कार्ड और रिजल्ट की जानकारी एक जगह।
-        </p>
-
-        <div class="max-w-2xl mx-auto">
-            <div class="relative">
-                <i class="fa-solid fa-magnifying-glass absolute left-4 top-3.5 text-gray-400"></i>
-                <input type="text" id="searchInput" oninput="filterLinks()"
-                    placeholder="Search Jobs, Scholarship, Admit Card, Resume..."
-                    class="w-full pl-12 pr-4 py-3 rounded-full text-gray-900 bg-white shadow-xl focus:outline-none focus:ring-4 focus:ring-brandPink">
-            </div>
-        </div>
-
-        <div class="flex flex-wrap justify-center gap-3">
-            <a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" target="_blank" rel="noopener"
-               class="pink-gradient text-white px-5 py-3 rounded-xl font-bold shadow-lg flex items-center gap-2">
-                <i class="fa-brands fa-whatsapp text-xl"></i> Join WhatsApp Channel
-            </a>
-            <a href="https://www.resumeground.com/create-resume" target="_blank" rel="noopener"
-               class="bg-white text-brandBlack px-5 py-3 rounded-xl font-bold shadow-lg">
-                <i class="fa-solid fa-file-lines text-brandPink mr-2"></i> Resume बनवाएँ
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- MAIN -->
-<main class="max-w-7xl mx-auto px-4 py-8 flex-grow">
-
-    <!-- PAYMENT PANEL: HIDDEN BY DEFAULT -->
-    <section id="payment-section" class="payment-section hidden mb-10">
-        <div class="max-w-3xl mx-auto">
-            <div class="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-brandPink/20">
-                <div class="pink-gradient text-white p-5">
-                    <div class="flex items-center justify-between gap-3">
-                        <div class="flex items-center gap-3">
-                            <div class="bg-white/20 rounded-full w-12 h-12 flex items-center justify-center">
-                                <i class="fa-solid fa-qrcode text-2xl"></i>
-                            </div>
-                            <div>
-                                <h2 class="text-xl md:text-2xl font-black">Payment QR Generator</h2>
-                                <p class="text-pink-100 text-sm">Customer से payment लेने के लिए QR बनाएं</p>
-                            </div>
-                        </div>
-                        <button onclick="hidePayment()" aria-label="Close Payment QR"
-                                class="bg-white/20 hover:bg-white/30 w-10 h-10 rounded-full text-xl font-bold">
-                            &times;
-                        </button>
-                    </div>
-                </div>
-
-                <div class="p-5 md:p-7">
-                    <label class="block text-sm font-bold text-gray-700 mb-2">UPI Account</label>
-                    <div class="flex gap-2 mb-5">
-                        <select id="upiSelect" onchange="selectUPI()"
-                            class="flex-1 px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-brandPink focus:outline-none font-semibold"></select>
-                        <button onclick="openUPIManager()" class="px-4 rounded-xl bg-gray-100 hover:bg-pink-50 text-brandPink font-bold">
-                            <i class="fa-solid fa-plus"></i>
-                        </button>
-                    </div>
-
-                    <div id="selectedUPIBox" class="hidden bg-pink-50 border border-pink-200 rounded-xl p-3 mb-5">
-                        <div class="text-xs text-gray-500 font-semibold">Selected UPI ID</div>
-                        <div id="selectedUPIText" class="font-bold text-brandBlack"></div>
-                    </div>
-
-                    <label class="block text-sm font-bold text-gray-700 mb-2">Payment Amount (₹)</label>
-                    <input id="amount" type="number" min="1" step="0.01" placeholder="200"
-                        class="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-brandPink focus:outline-none text-lg font-bold mb-5">
-
-                    <label class="block text-sm font-bold text-gray-700 mb-2">Customer Name <span class="text-gray-400 font-normal">(Optional)</span></label>
-                    <input id="customerName" type="text" placeholder="Rahul Kumar"
-                        class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-brandPink focus:outline-none mb-5">
-
-                    <label class="block text-sm font-bold text-gray-700 mb-2">Payment For <span class="text-gray-400 font-normal">(Optional)</span></label>
-                    <input id="paymentPurpose" type="text" placeholder="PAN Card / Resume"
-                        class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-brandPink focus:outline-none mb-6">
-
-                    <button onclick="generatePaymentQR()"
-                        class="w-full pink-gradient text-white py-3.5 rounded-xl font-black text-lg shadow-lg">
-                        <i class="fa-solid fa-qrcode mr-2"></i> Generate Payment QR
-                    </button>
-
-                    <div id="qrResult" class="hidden mt-7">
-                        <div class="border-t pt-6">
-                            <div class="flex justify-center overflow-x-auto py-2">
-                                <canvas id="paymentCardCanvas" width="400" height="540"
-                                    class="rounded-2xl shadow-2xl border border-gray-300 max-w-full h-auto"></canvas>
-                            </div>
-                            <div id="qrcode" class="hidden"></div>
-
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
-                                <button onclick="downloadQRCodeCard()"
-                                    class="bg-brandBlack text-white py-3.5 px-4 rounded-xl font-bold flex items-center justify-center gap-2">
-                                    <i class="fa-solid fa-download text-brandPink"></i> Download Card
-                                </button>
-                                <button onclick="shareQRWhatsAppCard()"
-                                    class="bg-brandPink text-white py-3.5 px-4 rounded-xl font-bold flex items-center justify-center gap-2">
-                                    <i class="fa-brands fa-whatsapp text-lg"></i> Share Details
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CATEGORY GRID -->
-    <div id="categoriesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-        <!-- Latest Updates -->
-        <div id="latest-updates" class="category-box bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 card-hover">
-            <div class="pink-gradient text-white p-3.5 font-bold text-lg flex items-center gap-2">
-                <i class="fa-solid fa-bell"></i> Latest Updates
-            </div>
-            <ul class="divide-y divide-gray-100 text-sm">
-                <li class="p-3.5 hover:bg-pink-50">
-                    <a href="https://lnmu.ac.in/" target="_blank" rel="noopener" class="hover:text-brandPink font-medium flex justify-between gap-2">
-                        <span>LNMU UG Admission Online Apply</span><span class="bg-brandPink text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">NEW</span>
-                    </a>
-                </li>
-                <li class="p-3.5 hover:bg-pink-50">
-                    <a href="https://bceceboard.bihar.gov.in/" target="_blank" rel="noopener" class="hover:text-brandPink font-medium flex justify-between gap-2">
-                        <span>Bihar Paramedical / BCECEB Portal</span><span class="bg-brandPink text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">NEW</span>
-                    </a>
-                </li>
-                <li class="p-3.5 hover:bg-pink-50"><a href="https://biharbhumi.bihar.gov.in/" target="_blank" rel="noopener" class="hover:text-brandPink font-medium block">Bihar Dakhil Kharij / Bhumi Portal</a></li>
-                <li class="p-3.5 hover:bg-pink-50"><a href="https://scholarships.gov.in/" target="_blank" rel="noopener" class="hover:text-brandPink font-medium block">National Scholarship Portal</a></li>
-            </ul>
-        </div>
-
-        <!-- Jobs -->
-        <div id="latest-jobs" class="category-box bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 card-hover">
-            <div class="pink-gradient text-white p-3.5 font-bold text-lg flex items-center gap-2">
-                <i class="fa-solid fa-briefcase"></i> Latest Jobs
-            </div>
-            <ul class="divide-y divide-gray-100 text-sm">
-                <li class="p-3.5 hover:bg-pink-50"><a href="https://epds.bihar.gov.in/" target="_blank" rel="noopener" class="hover:text-brandPink font-medium block">Bihar Ration Dealer / PDS Portal</a></li>
-                <li class="p-3.5 hover:bg-pink-50"><a href="https://agnipathvayu.cdac.in/" target="_blank" rel="noopener" class="hover:text-brandPink font-medium block">Indian Air Force Agniveervayu</a></li>
-                <li class="p-3.5 hover:bg-pink-50"><a href="https://www.ibps.in/" target="_blank" rel="noopener" class="hover:text-brandPink font-medium block">IBPS Recruitment Portal</a></li>
-                <li class="p-3.5 hover:bg-pink-50"><a href="https://ssc.gov.in/" target="_blank" rel="noopener" class="hover:text-brandPink font-medium block">SSC Recruitment Portal</a></li>
-            </ul>
-        </div>
-
-        <!-- Sarkari Yojana -->
-        <div id="sarkari-yojana" class="category-box bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 card-hover">
-            <div class="pink-gradient text-white p-3.5 font-bold text-lg flex items-center gap-2">
-                <i class="fa-solid fa-landmark"></i> Sarkari Yojana
-            </div>
-            <ul class="divide-y divide-gray-100 text-sm">
-                <li class="p-3.5 hover:bg-pink-50"><a href="https://epds.bihar.gov.in/" target="_blank" rel="noopener" class="hover:text-brandPink font-medium block">Bihar Ration Card / PDS</a></li>
-                <li class="p-3.5 hover:bg-pink-50"><a href="https://sbm.gov.in/" target="_blank" rel="noopener" class="hover:text-brandPink font-medium block">Swachh Bharat Mission</a></li>
-                <li class="p-3.5 hover:bg-pink-50"><a href="https://voters.eci.gov.in/" target="_blank" rel="noopener" class="hover:text-brandPink font-medium block">Voter ID Online Portal</a></li>
-                <li class="p-3.5 hover:bg-pink-50"><a href="https://beneficiary.nha.gov.in/" target="_blank" rel="noopener" class="hover:text-brandPink font-medium block">Ayushman Bharat Beneficiary Portal</a></li>
-            </ul>
-        </div>
-
-        <!-- Scholarship -->
-        <div id="scholarship" class="category-box bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 card-hover">
-            <div class="pink-gradient text-white p-3.5 font-bold text-lg flex items-center gap-2">
-                <i class="fa-solid fa-graduation-cap"></i> Scholarship
-            </div>
-            <ul class="divide-y divide-gray-100 text-sm">
-                <li class="p-3.5 hover:bg-pink-50"><a href="https://pmsonline.bihar.gov.in/" target="_blank" rel="noopener" class="hover:text-brandPink font-medium flex justify-between gap-2"><span>Bihar Post Matric Scholarship</span><span class="bg-brandPink text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">NEW</span></a></li>
-                <li class="p-3.5 hover:bg-pink-50"><a href="https://scholarships.gov.in/" target="_blank" rel="noopener" class="hover:text-brandPink font-medium block">National Scholarship Portal (NSP)</a></li>
-                <li class="p-3.5 hover:bg-pink-50"><a href="https://medhasoft.bih.nic.in/" target="_blank" rel="noopener" class="hover:text-brandPink font-medium block">Bihar Medhasoft Scholarship</a></li>
-                <li class="p-3.5 hover:bg-pink-50"><a href="https://yet.nta.ac.in/" target="_blank" rel="noopener" class="hover:text-brandPink font-medium block">PM YASASVI Portal</a></li>
-            </ul>
-        </div>
-
-        <!-- Admit Card -->
-        <div id="admit-card" class="category-box bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 card-hover">
-            <div class="pink-gradient text-white p-3.5 font-bold text-lg flex items-center gap-2">
-                <i class="fa-solid fa-id-card"></i> Admit Card
-            </div>
-            <ul class="divide-y divide-gray-100 text-sm">
-                <li class="p-3.5 hover:bg-pink-50"><a href="https://www.rrbapply.gov.in/" target="_blank" rel="noopener" class="hover:text-brandPink font-medium block">Railway RRB Recruitment / Admit Card</a></li>
-                <li class="p-3.5 hover:bg-pink-50"><a href="https://csbc.bihar.gov.in/" target="_blank" rel="noopener" class="hover:text-brandPink font-medium block">Bihar Police CSBC</a></li>
-                <li class="p-3.5 hover:bg-pink-50"><a href="https://biharboardonline.bihar.gov.in/" target="_blank" rel="noopener" class="hover:text-brandPink font-medium block">Bihar Board Examination Portal</a></li>
-                <li class="p-3.5 hover:bg-pink-50"><a href="https://patnahighcourt.gov.in/" target="_blank" rel="noopener" class="hover:text-brandPink font-medium block">Patna High Court Recruitment</a></li>
-            </ul>
-        </div>
-
-        <!-- Results -->
-        <div id="results" class="category-box bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 card-hover">
-            <div class="pink-gradient text-white p-3.5 font-bold text-lg flex items-center gap-2">
-                <i class="fa-solid fa-square-poll-vertical"></i> Results
-            </div>
-            <ul class="divide-y divide-gray-100 text-sm">
-                <li class="p-3.5 hover:bg-pink-50"><a href="https://bceceboard.bihar.gov.in/" target="_blank" rel="noopener" class="hover:text-brandPink font-medium block">BCECEB Official Results</a></li>
-                <li class="p-3.5 hover:bg-pink-50"><a href="https://biharboardonline.bihar.gov.in/" target="_blank" rel="noopener" class="hover:text-brandPink font-medium block">Bihar Board 10th / 12th Results</a></li>
-                <li class="p-3.5 hover:bg-pink-50"><a href="https://lnmu.ac.in/" target="_blank" rel="noopener" class="hover:text-brandPink font-medium block">LNMU Results / University Portal</a></li>
-                <li class="p-3.5 hover:bg-pink-50"><a href="https://ssc.gov.in/" target="_blank" rel="noopener" class="hover:text-brandPink font-medium block">SSC Results / Candidate Portal</a></li>
-            </ul>
-        </div>
-
-        <!-- Online Services -->
-        <div id="online-services" class="category-box bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 card-hover">
-            <div class="pink-gradient text-white p-3.5 font-bold text-lg flex items-center gap-2">
-                <i class="fa-solid fa-laptop"></i> Online Services
-            </div>
-            <ul class="divide-y divide-gray-100 text-sm">
-                <li class="p-3.5 hover:bg-pink-50"><a href="https://www.resumeground.com/create-resume" target="_blank" rel="noopener" class="hover:text-brandPink font-medium flex justify-between gap-2"><span>Resume बनवाएँ</span><span class="bg-brandPink text-white text-[10px] font-bold px-1.5 py-0.5 rounded">OPEN</span></a></li>
-                <li class="p-3.5 hover:bg-pink-50"><a href="https://www.pan.utiitsl.com/PAN/" target="_blank" rel="noopener" class="hover:text-brandPink font-medium block">PAN Card Online Service</a></li>
-                <li class="p-3.5 hover:bg-pink-50"><a href="https://myaadhaar.uidai.gov.in/" target="_blank" rel="noopener" class="hover:text-brandPink font-medium block">Aadhaar Online Services</a></li>
-                <li class="p-3.5 hover:bg-pink-50"><a href="https://www.passportindia.gov.in/" target="_blank" rel="noopener" class="hover:text-brandPink font-medium block">Passport Seva</a></li>
-            </ul>
-        </div>
-    </div>
-</main>
-
-<!-- UPI MODAL -->
-<div id="upiModal" class="fixed inset-0 z-[70] flex items-center justify-center p-4 modal-bg hidden">
-    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl relative">
-        <div class="flex justify-between items-center border-b pb-3 mb-4">
-            <h3 class="text-lg font-black text-brandBlack">Manage UPI Accounts</h3>
-            <button onclick="closeUPIManager()" class="text-gray-400 hover:text-brandPink text-2xl font-bold">&times;</button>
-        </div>
-
-        <div class="space-y-3">
-            <input id="newUpiName" type="text" placeholder="Account Name (e.g. Shop UPI)"
-                class="w-full px-3 py-2.5 rounded-lg border focus:border-brandPink focus:outline-none text-sm">
-            <input id="newUpiId" type="text" placeholder="UPI ID (e.g. name@upi)"
-                class="w-full px-3 py-2.5 rounded-lg border focus:border-brandPink focus:outline-none text-sm">
-            <button onclick="addUPIAccount()" class="w-full pink-gradient text-white py-2.5 rounded-lg font-bold text-sm shadow">
-                Add Account
-            </button>
-        </div>
-
-        <div class="border-t pt-4 mt-4">
-            <h4 class="text-xs font-bold text-gray-500 uppercase mb-2">Saved Accounts</h4>
-            <div id="upiList" class="space-y-2 max-h-48 overflow-y-auto"></div>
-        </div>
-    </div>
-</div>
-
-<!-- FLOATING PAYMENT BUTTON -->
-<button id="paymentFab" onclick="showPayment()" class="payment-fab pink-gradient text-white" title="Payment QR">
-    <i class="fa-solid fa-qrcode text-xl"></i>
+<header class="sticky top-0 z-50 bg-brandBlack shadow-lg">
+<div class="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center gap-3">
+<button onclick="showHome()" class="flex items-center gap-3 text-left">
+<img src="logo.png" alt="THE STUDENT POINT Logo" class="h-14 w-14 rounded-full object-contain bg-black">
+<div><div class="text-lg sm:text-xl font-black text-white">THE STUDENT <span class="text-brandPink">POINT</span></div><div class="text-[10px] sm:text-xs text-gray-300">Online Service, Tour & Travels</div></div>
 </button>
+<nav class="hidden lg:flex gap-4 text-sm font-semibold text-white">
+<button onclick="showHome()">Home</button><button onclick="showCategory('latest-jobs')">Latest Jobs</button><button onclick="showCategory('scholarship')">Scholarship</button><button onclick="showCategory('sarkari-yojana')">Sarkari Yojana</button><button onclick="showCategory('admit-card')">Admit Card</button><button onclick="showCategory('results')">Results</button>
+</nav>
+<div class="flex gap-2">
+<a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" target="_blank" class="pink-gradient text-white px-3 py-2 rounded-full font-bold text-xs sm:text-sm"><i class="fa-brands fa-whatsapp mr-1"></i><span class="hidden sm:inline">WhatsApp Channel</span></a>
+<button onclick="toggleMobileMenu()" class="lg:hidden text-white text-2xl"><i id="menu-icon" class="fa-solid fa-bars"></i></button>
+</div></div>
+<nav id="mobile-menu" class="hidden lg:hidden bg-brandBlack border-t border-gray-700 px-4 py-3 space-y-1 text-sm font-semibold">
+<button onclick="showHome();closeMobileMenu()" class="block w-full text-left py-2 text-white">Home</button>
+<button onclick="showCategory('latest-jobs');closeMobileMenu()" class="block w-full text-left py-2 text-white">Latest Jobs</button>
+<button onclick="showCategory('scholarship');closeMobileMenu()" class="block w-full text-left py-2 text-white">Scholarship</button>
+<button onclick="showCategory('sarkari-yojana');closeMobileMenu()" class="block w-full text-left py-2 text-white">Sarkari Yojana</button>
+<button onclick="showCategory('admit-card');closeMobileMenu()" class="block w-full text-left py-2 text-white">Admit Card</button>
+<button onclick="showCategory('results');closeMobileMenu()" class="block w-full text-left py-2 text-white">Results</button>
+<a href="https://whatsapp.com/channel/0029VagNcn7KwqSb2vOXqV04" target="_blank" class="block py-2 text-brandPink">WhatsApp Channel</a>
+</nav></header>
 
-<!-- FOOTER -->
-<footer class="bg-brandBlack text-gray-300 py-9 border-t-4 border-brandPink">
-    <div class="max-w-7xl mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-7 text-center md:text-left">
-            <div>
-                <div class="text-2xl font-black text-white">THE STUDENT <span class="text-brandPink">POINT</span></div>
-                <p class="text-sm mt-2 text-gray-400">Cyber Cafe & Online Services</p>
-            </div>
+<div class="bg-brandPink text-white text-sm font-semibold flex overflow-hidden"><div class="bg-brandBlack px-4 py-2 text-xs font-bold">⚡ NOTICE</div><marquee class="py-1" scrollamount="5">🔴 Latest Jobs & Online Form Updates | 🔴 Scholarship Updates | 🔴 Admit Card & Result Updates — THE STUDENT POINT</marquee></div>
 
-            <div>
-                <h3 class="font-bold text-white mb-2">Quick Links</h3>
-                <div class="flex flex-wrap justify-center md:justify-start gap-x-4 gap-y-2 text-sm">
-                    <button onclick="showCategory('latest-jobs')" class="hover:text-brandPink">Jobs</button>
-                    <button onclick="showCategory('scholarship')" class="hover:text-brandPink">Scholarship</button>
-                    <button onclick="showCategory('results')" class="hover:text-brandPink">Results</button>
-                    <a href="https://www.resumeground.com/create-resume" target="_blank" rel="noopener" class="hover:text-brandPink">Resume</a>
-                </div>
-            </div>
+<div class="bg-white border-b shadow-sm overflow-x-auto no-scrollbar"><div class="max-w-7xl mx-auto px-4 flex gap-6 py-2 text-sm font-semibold whitespace-nowrap">
+<button onclick="showHome()">🏠 Home</button><button onclick="showCategory('latest-updates')">🔔 Latest Updates</button><button onclick="showCategory('latest-jobs')">💼 Latest Jobs</button><button onclick="showCategory('scholarship')">🎓 Scholarship</button><button onclick="showCategory('sarkari-yojana')">🏛️ Sarkari Yojana</button><button onclick="showCategory('admit-card')">🪪 Admit Card</button><button onclick="showCategory('results')">📊 Results</button><button onclick="scrollToServices()">🧰 TSP Services</button>
+</div></div>
 
-            <div>
-                <h3 class="font-bold text-white mb-2">Contact</h3>
-                <a href="tel:8210871416" class="inline-flex items-center gap-2 text-brandPink font-black text-lg hover:text-white">
-                    <i class="fa-solid fa-phone"></i> 8210871416
-                </a>
-                <p class="text-xs text-gray-500 mt-2">Online Form • Scholarship • Resume • Cyber Cafe Services</p>
-            </div>
-        </div>
+<section class="hero-bg text-white py-12 sm:py-16 px-4 text-center"><div class="max-w-4xl mx-auto space-y-5">
+<div class="inline-block bg-white/10 border border-white/20 px-4 py-2 rounded-full text-xs">✓ Trusted Online Service Center</div>
+<h1 class="text-3xl sm:text-5xl font-black">Online Forms, Jobs & <span class="text-brandPink">Digital Services</span></h1>
+<p class="text-gray-200 text-sm sm:text-lg">सभी प्रकार के ऑनलाइन फॉर्म, स्कॉलरशिप, रिज्यूमे, फोटो और डिजिटल सेवाओं के लिए THE STUDENT POINT.</p>
+<div class="max-w-2xl mx-auto relative"><i class="fa-solid fa-magnifying-glass absolute left-4 top-3.5 text-gray-400"></i><input id="searchInput" onkeyup="filterLinks()" placeholder="Search Forms, Jobs, Scholarship, Services..." class="w-full pl-12 pr-4 py-3 rounded-full text-gray-900 bg-white shadow-xl focus:outline-none"></div>
+<div class="flex flex-wrap justify-center gap-3"><button onclick="openPayment()" class="pink-gradient text-white px-5 py-3 rounded-xl font-bold shadow-lg"><i class="fa-solid fa-qrcode mr-2"></i>Payment QR Generator</button><button onclick="scrollToServices()" class="bg-white text-brandBlack px-5 py-3 rounded-xl font-bold shadow-lg"><i class="fa-solid fa-toolbox text-brandPink mr-2"></i>TSP Services</button></div>
+</div></section>
 
-        <div class="border-t border-gray-800 mt-7 pt-5 text-center text-xs text-gray-500">
-            © 2026 THE STUDENT POINT. All rights reserved.
-        </div>
-    </div>
-</footer>
+<main class="max-w-7xl mx-auto px-4 py-8 flex-grow">
+<section id="services-section" class="mb-10"><div class="flex justify-between items-end mb-4"><div><p class="text-brandPink font-bold text-sm">THE STUDENT POINT</p><h2 class="text-2xl sm:text-3xl font-black">TSP Services</h2></div><a href="tel:8210871416" class="text-sm font-bold text-brandPink">📞 8210871416</a></div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<a href="https://www.resumeground.com/create-resume" target="_blank" class="service-card bg-white rounded-2xl border p-5 shadow-sm text-center"><div class="w-14 h-14 mx-auto rounded-2xl pink-gradient text-white flex items-center justify-center text-2xl mb-3">📄</div><b>Resume Maker</b><p class="text-xs text-gray-500 mt-1">Online Resume बनाएं</p></a>
+<button onclick="openPayment()" class="service-card bg-white rounded-2xl border p-5 shadow-sm text-center"><div class="w-14 h-14 mx-auto rounded-2xl bg-brandBlack text-brandPink flex items-center justify-center text-2xl mb-3">🔳</div><b>Payment QR</b><p class="text-xs text-gray-500 mt-1">Payment QR बनाएं</p></button>
+<button onclick="openPhotoCompressor()" class="service-card bg-white rounded-2xl border p-5 shadow-sm text-center"><div class="w-14 h-14 mx-auto rounded-2xl bg-brandBlack text-brandPink flex items-center justify-center text-2xl mb-3">🖼️</div><b>Photo Compressor</b><p class="text-xs text-gray-500 mt-1">KB / MB बदलें</p></button>
+<button onclick="openPassport()" class="service-card bg-white rounded-2xl border p-5 shadow-sm text-center"><div class="w-14 h-14 mx-auto rounded-2xl pink-gradient text-white flex items-center justify-center text-2xl mb-3">🪪</div><b>Passport Photo</b><p class="text-xs text-gray-500 mt-1">Passport size photo</p></button>
+</div></section>
+
+<section id="payment-section" class="hidden mb-10 payment-section"><div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl border overflow-hidden">
+<div class="pink-gradient text-white p-5 flex justify-between items-center"><div><h2 class="text-xl sm:text-2xl font-black">Payment QR Generator</h2><p class="text-pink-100 text-sm">Customer से payment लेने के लिए QR बनाएं</p></div><button onclick="closePayment()" class="bg-white/20 w-10 h-10 rounded-full text-xl">×</button></div>
+<div class="p-5 sm:p-7">
+<label class="block text-sm font-bold mb-2">UPI Account</label><div class="flex gap-2 mb-5"><select id="upiSelect" onchange="selectUPI()" class="flex-1 px-4 py-3 rounded-xl border-2"></select><button onclick="openUPIManager()" class="px-4 rounded-xl bg-gray-100 text-brandPink"><i class="fa-solid fa-gear"></i></button></div>
+<div id="selectedUPIBox" class="hidden bg-pink-50 border border-pink-200 rounded-xl p-3 mb-5"><div class="text-xs text-gray-500">Selected UPI ID</div><b id="selectedUPIText"></b></div>
+<label class="block text-sm font-bold mb-2">Payment Amount (₹)</label><input id="amount" type="number" min="1" step=".01" placeholder="200" class="w-full px-4 py-3 rounded-xl border-2 mb-5">
+<label class="block text-sm font-bold mb-2">Customer Name <span class="text-gray-400">(Optional)</span></label><input id="customerName" placeholder="Rahul Kumar" class="w-full px-4 py-3 rounded-xl border mb-5">
+<label class="block text-sm font-bold mb-2">Payment For <span class="text-gray-400">(Optional)</span></label><input id="paymentPurpose" placeholder="PAN Card / Resume" class="w-full px-4 py-3 rounded-xl border mb-6">
+<button onclick="generatePaymentQR()" class="w-full pink-gradient text-white py-3.5 rounded-xl font-black text-lg">🔳 Generate Payment QR</button>
+<div id="qrResult" class="hidden mt-7 border-t pt-6"><div class="flex justify-center overflow-x-auto"><canvas id="paymentCardCanvas" width="400" height="540" class="rounded-2xl shadow-xl border"></canvas></div><div id="qrcode" class="hidden"></div><div class="grid sm:grid-cols-2 gap-3 mt-5"><button onclick="downloadQRCodeCard()" class="bg-brandBlack text-white py-3 rounded-xl font-bold">⬇️ Download Card</button><button onclick="shareQRWhatsAppCard()" class="bg-brandPink text-white py-3 rounded-xl font-bold">💬 Share Details</button></div></div>
+</div></div></section>
+
+<div id="categoriesGrid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div id="latest-updates" class="category-box bg-white rounded-2xl shadow-md overflow-hidden border"><div class="pink-gradient text-white p-3.5 font-bold text-lg">🔔 Latest Updates</div><ul class="divide-y text-sm">
+<li class="p-3.5 hover:bg-pink-50"><a href="https://lnmu.ac.in/" target="_blank" class="hover:text-brandPink font-medium">LNMU UG Admission Online Apply Portal — NEW</a></li>
+<li class="p-3.5 hover:bg-pink-50"><a href="#" class="hover:text-brandPink font-medium">Bihar Paramedical Counselling Registration</a></li>
+<li class="p-3.5 hover:bg-pink-50"><a href="https://land.bihar.gov.in/" target="_blank" class="hover:text-brandPink font-medium">Bihar Dakhil Kharij / Land Portal</a></li>
+<li class="p-3.5 hover:bg-pink-50"><a href="https://scholarships.gov.in/" target="_blank" class="hover:text-brandPink font-medium">National Scholarship Portal</a></li></ul></div>
+
+<div id="latest-jobs" class="category-box bg-white rounded-2xl shadow-md overflow-hidden border"><div class="pink-gradient text-white p-3.5 font-bold text-lg">💼 Latest Jobs</div><ul class="divide-y text-sm">
+<li class="p-3.5 hover:bg-pink-50"><a href="https://epds.bihar.gov.in/" target="_blank" class="hover:text-brandPink font-medium">Bihar Ration Dealer / PDS Portal</a></li>
+<li class="p-3.5 hover:bg-pink-50"><a href="https://agnipathvayu.cdac.in/" target="_blank" class="hover:text-brandPink font-medium">Indian Air Force Agniveervayu</a></li>
+<li class="p-3.5 hover:bg-pink-50"><a href="https://www.ibps.in/" target="_blank" class="hover:text-brandPink font-medium">IBPS Recruitment Portal</a></li>
+<li class="p-3.5 hover:bg-pink-50"><a href="https://ssc.gov.in/" target="_blank" class="hover:text-brandPink font-medium">SSC Official Portal</a></li></ul></div>
+
+<div id="sarkari-yojana" class="category-box bg-white rounded-2xl shadow-md overflow-hidden border"><div class="pink-gradient text-white p-3.5 font-bold text-lg">🏛️ Sarkari Yojana</div><ul class="divide-y text-sm">
+<li class="p-3.5 hover:bg-pink-50"><a href="https://epds.bihar.gov.in/" target="_blank" class="hover:text-brandPink font-medium">Bihar Ration Card / PDS Portal</a></li>
+<li class="p-3.5 hover:bg-pink-50"><a href="https://sbm.gov.in/" target="_blank" class="hover:text-brandPink font-medium">Swachh Bharat / Sauchalay Portal</a></li>
+<li class="p-3.5 hover:bg-pink-50"><a href="https://voters.eci.gov.in/" target="_blank" class="hover:text-brandPink font-medium">Voter ID Card Online Portal</a></li>
+<li class="p-3.5 hover:bg-pink-50"><a href="https://beneficiary.nha.gov.in/" target="_blank" class="hover:text-brandPink font-medium">Ayushman Bharat Portal</a></li></ul></div>
+
+<div id="scholarship" class="category-box bg-white rounded-2xl shadow-md overflow-hidden border"><div class="pink-gradient text-white p-3.5 font-bold text-lg">🎓 Scholarship</div><ul class="divide-y text-sm">
+<li class="p-3.5 hover:bg-pink-50"><a href="https://pmsonline.bih.nic.in/" target="_blank" class="hover:text-brandPink font-medium">Bihar Post Matric Scholarship</a></li>
+<li class="p-3.5 hover:bg-pink-50"><a href="https://scholarships.gov.in/" target="_blank" class="hover:text-brandPink font-medium">National Scholarship Portal (NSP)</a></li>
+<li class="p-3.5 hover:bg-pink-50"><a href="https://medhasoft.bih.nic.in/" target="_blank" class="hover:text-brandPink font-medium">Bihar Medhasoft</a></li>
+<li class="p-3.5 hover:bg-pink-50"><a href="https://yet.nta.ac.in/" target="_blank" class="hover:text-brandPink font-medium">PM YASASVI Scholarship</a></li></ul></div>
+
+<div id="admit-card" class="category-box bg-white rounded-2xl shadow-md overflow-hidden border"><div class="pink-gradient text-white p-3.5 font-bold text-lg">🪪 Admit Card</div><ul class="divide-y text-sm">
+<li class="p-3.5 hover:bg-pink-50"><a href="https://rrbapply.gov.in/" target="_blank" class="hover:text-brandPink font-medium">Railway RRB Recruitment Portal</a></li>
+<li class="p-3.5 hover:bg-pink-50"><a href="https://csbc.bihar.gov.in/" target="_blank" class="hover:text-brandPink font-medium">Bihar Police CSBC Portal</a></li>
+<li class="p-3.5 hover:bg-pink-50"><a href="https://biharboardonline.bihar.gov.in/" target="_blank" class="hover:text-brandPink font-medium">Bihar Board Examination Portal</a></li>
+<li class="p-3.5 hover:bg-pink-50"><a href="https://patnahighcourt.gov.in/" target="_blank" class="hover:text-brandPink font-medium">Patna High Court Portal</a></li></ul></div>
+
+<div id="results" class="category-box bg-white rounded-2xl shadow-md overflow-hidden border"><div class="pink-gradient text-white p-3.5 font-bold text-lg">📊 Results</div><ul class="divide-y text-sm">
+<li class="p-3.5 hover:bg-pink-50"><a href="https://bceceboard.bihar.gov.in/" target="_blank" class="hover:text-brandPink font-medium">BCECE Board Official Portal</a></li>
+<li class="p-3.5 hover:bg-pink-50"><a href="https://biharboardonline.bihar.gov.in/" target="_blank" class="hover:text-brandPink font-medium">Bihar Board 10th / 12th Results</a></li>
+<li class="p-3.5 hover:bg-pink-50"><a href="https://lnmu.ac.in/" target="_blank" class="hover:text-brandPink font-medium">LNMU University Portal</a></li>
+<li class="p-3.5 hover:bg-pink-50"><a href="https://ssc.gov.in/" target="_blank" class="hover:text-brandPink font-medium">SSC Official Portal</a></li></ul></div>
+</div></main>
+
+<div id="photoModal" class="fixed inset-0 z-[70] modal-bg hidden overflow-y-auto p-4"><div class="bg-white rounded-2xl max-w-lg w-full mx-auto my-8 shadow-2xl overflow-hidden"><div class="pink-gradient text-white p-4 flex justify-between"><b>🖼️ Photo Size Compressor</b><button onclick="closeTool('photoModal')">✕</button></div><div class="p-5 space-y-4"><input id="compressFile" type="file" accept="image/*" class="w-full border rounded-xl p-3"><div class="grid grid-cols-2 gap-3"><input id="targetKB" type="number" min="10" placeholder="Target KB e.g. 100" class="border rounded-xl p-3"><input id="quality" type="number" min=".1" max="1" step=".05" value=".8" placeholder="Quality" class="border rounded-xl p-3"></div><button onclick="compressPhoto()" class="w-full pink-gradient text-white py-3 rounded-xl font-bold">Compress Photo</button><div id="compressResult" class="hidden text-center"><img id="compressedPreview" class="max-h-56 mx-auto rounded-xl border"><p id="compressInfo" class="text-sm font-semibold my-2"></p><a id="downloadCompressed" class="inline-block bg-brandBlack text-white px-5 py-3 rounded-xl font-bold" download="compressed-photo.jpg">Download</a></div></div></div></div>
+
+<div id="passportModal" class="fixed inset-0 z-[70] modal-bg hidden overflow-y-auto p-4"><div class="bg-white rounded-2xl max-w-lg w-full mx-auto my-8 shadow-2xl overflow-hidden"><div class="pink-gradient text-white p-4 flex justify-between"><b>🪪 Passport Size Photo Maker</b><button onclick="closeTool('passportModal')">✕</button></div><div class="p-5 space-y-4"><input id="passportFile" type="file" accept="image/*" class="w-full border rounded-xl p-3"><div class="grid grid-cols-2 gap-3"><input id="passportW" type="number" value="413" class="border rounded-xl p-3"><input id="passportH" type="number" value="531" class="border rounded-xl p-3"></div><button onclick="makePassport()" class="w-full pink-gradient text-white py-3 rounded-xl font-bold">Create Passport Photo</button><div id="passportResult" class="hidden text-center"><canvas id="passportCanvas" class="max-w-full mx-auto border rounded-xl"></canvas><br><a id="downloadPassport" class="inline-block bg-brandBlack text-white px-5 py-3 rounded-xl font-bold" download="passport-photo.jpg">Download</a></div></div></div></div>
+
+<div id="upiModal" class="fixed inset-0 z-[80] flex items-center justify-center p-4 modal-bg hidden"><div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl"><div class="flex justify-between border-b pb-3"><h3 class="font-bold">Manage UPI Accounts</h3><button onclick="closeUPIManager()" class="text-2xl">✕</button></div><div class="space-y-3 mt-4"><input id="newUpiName" placeholder="Account Name" class="w-full border rounded-lg p-3"><input id="newUpiId" placeholder="UPI ID e.g. name@upi" class="w-full border rounded-lg p-3"><button onclick="addUPIAccount()" class="w-full pink-gradient text-white py-2 rounded-lg font-bold">Add Account</button></div><div class="border-t mt-4 pt-3"><h4 class="text-xs font-bold text-gray-500 mb-2">Saved Accounts</h4><div id="upiList" class="space-y-2"></div></div></div></div>
+
+<footer class="bg-brandBlack text-gray-300 py-9"><div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-6 items-center"><div class="flex items-center gap-3"><img src="logo.png" class="h-16 w-16 rounded-full object-contain bg-black"><div><b class="text-xl text-white">THE STUDENT <span class="text-brandPink">POINT</span></b><p class="text-xs">Online Service, Tour & Travels</p></div></div><div><b class="text-white">Contact</b><br><a href="tel:8210871416" class="hover:text-brandPink">📞 8210871416</a><br><a href="https://wa.me/918210871416" target="_blank" class="hover:text-brandPink">💬 WhatsApp</a></div><div class="md:text-right text-xs text-gray-500">© 2026 THE STUDENT POINT. All rights reserved.</div></div></footer>
 
 <script>
-const defaultUPIs = [
-    {name:"Main Shop UPI", id:"studentpoint@upi"}
-];
-
-let currentPaymentVisible = false;
-
-function getUPIs(){
-    try{
-        const saved = localStorage.getItem('student_point_upis');
-        return saved ? JSON.parse(saved) : defaultUPIs;
-    }catch(e){ return defaultUPIs; }
-}
-
-function saveUPIs(upis){
-    localStorage.setItem('student_point_upis', JSON.stringify(upis));
-}
-
-function renderUPIOptions(){
-    const select=document.getElementById('upiSelect');
-    if(!select)return;
-    const upis=getUPIs();
-    select.innerHTML='';
-    upis.forEach(upi=>{
-        const opt=document.createElement('option');
-        opt.value=upi.id;
-        opt.textContent=`${upi.name} (${upi.id})`;
-        select.appendChild(opt);
-    });
-    selectUPI();
-}
-
-function selectUPI(){
-    const select=document.getElementById('upiSelect');
-    const box=document.getElementById('selectedUPIBox');
-    const text=document.getElementById('selectedUPIText');
-    if(select && select.value){
-        box.classList.remove('hidden');
-        text.textContent=select.value;
-    }
-}
-
-function openUPIManager(){
-    document.getElementById('upiModal').classList.remove('hidden');
-    renderUPIManagerList();
-}
-
-function closeUPIManager(){
-    document.getElementById('upiModal').classList.add('hidden');
-}
-
-function renderUPIManagerList(){
-    const list=document.getElementById('upiList');
-    const upis=getUPIs();
-    list.innerHTML='';
-    upis.forEach((upi,index)=>{
-        const item=document.createElement('div');
-        item.className="flex justify-between items-center bg-gray-50 p-2.5 rounded-lg border text-sm";
-        item.innerHTML=`
-            <div class="min-w-0">
-                <div class="font-bold text-gray-800 truncate">${escapeHTML(upi.name)}</div>
-                <div class="text-xs text-gray-500 truncate">${escapeHTML(upi.id)}</div>
-            </div>
-            <button onclick="deleteUPIAccount(${index})" class="text-red-500 hover:text-red-700 px-2 py-1">
-                <i class="fa-solid fa-trash"></i>
-            </button>`;
-        list.appendChild(item);
-    });
-}
-
-function escapeHTML(str){
-    return String(str).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
-}
-
-function addUPIAccount(){
-    const name=document.getElementById('newUpiName').value.trim();
-    const id=document.getElementById('newUpiId').value.trim();
-
-    if(!name || !id){
-        alert('कृपया Account Name और UPI ID दोनों भरें!');
-        return;
-    }
-    if(!/^[^\\s@]+@[^\\s@]+$/.test(id)){
-        alert('कृपया सही UPI ID दर्ज करें, जैसे name@upi');
-        return;
-    }
-
-    const upis=getUPIs();
-    if(upis.some(u=>u.id.toLowerCase()===id.toLowerCase())){
-        alert('यह UPI ID पहले से मौजूद है!');
-        return;
-    }
-
-    upis.push({name,id});
-    saveUPIs(upis);
-    document.getElementById('newUpiName').value='';
-    document.getElementById('newUpiId').value='';
-    renderUPIManagerList();
-    renderUPIOptions();
-}
-
-function deleteUPIAccount(index){
-    const upis=getUPIs();
-    if(upis.length<=1){
-        alert('कम से कम एक UPI Account होना जरूरी है!');
-        return;
-    }
-    upis.splice(index,1);
-    saveUPIs(upis);
-    renderUPIManagerList();
-    renderUPIOptions();
-}
-
-function generatePaymentQR(){
-    const upi=document.getElementById('upiSelect').value;
-    const amount=document.getElementById('amount').value;
-    const customer=document.getElementById('customerName').value.trim();
-    const purpose=document.getElementById('paymentPurpose').value.trim();
-
-    if(!upi){
-        alert('कृपया एक UPI Select करें!');
-        return;
-    }
-    if(!amount || Number(amount)<=0){
-        alert('कृपया सही Payment Amount दर्ज करें!');
-        return;
-    }
-
-    const upiURI=`upi://pay?pa=${encodeURIComponent(upi)}&pn=${encodeURIComponent('THE STUDENT POINT')}&am=${encodeURIComponent(amount)}&cu=INR${purpose ? '&tn='+encodeURIComponent(purpose) : ''}`;
-
-    const qrContainer=document.getElementById('qrcode');
-    qrContainer.innerHTML='';
-
-    new QRCode(qrContainer,{
-        text:upiURI,
-        width:200,
-        height:200,
-        colorDark:"#111111",
-        colorLight:"#ffffff",
-        correctLevel:QRCode.CorrectLevel.H
-    });
-
-    setTimeout(()=>{
-        drawDesignerCard(upi,amount,customer,purpose);
-        document.getElementById('qrResult').classList.remove('hidden');
-    },250);
-}
-
-function drawDesignerCard(upi,amount,customer,purpose){
-    const canvas=document.getElementById('paymentCardCanvas');
-    const ctx=canvas.getContext('2d');
-    const qrImg=document.querySelector('#qrcode img') || document.querySelector('#qrcode canvas');
-
-    canvas.width=400;
-    canvas.height=540;
-
-    ctx.fillStyle='#FFFFFF';
-    ctx.fillRect(0,0,400,540);
-
-    ctx.fillStyle='#111111';
-    ctx.fillRect(0,0,400,80);
-
-    ctx.fillStyle='#FF4DA6';
-    ctx.fillRect(0,76,400,4);
-
-    ctx.textAlign='center';
-    ctx.font='900 20px Arial';
-    ctx.fillStyle='#FFFFFF';
-    ctx.fillText('THE STUDENT',145,48);
-    ctx.fillStyle='#FF4DA6';
-    ctx.fillText('POINT',270,48);
-
-    ctx.strokeStyle='#111111';
-    ctx.lineWidth=3;
-    ctx.strokeRect(90,105,220,220);
-
-    if(qrImg)ctx.drawImage(qrImg,100,115,200,200);
-
-    ctx.fillStyle='#111111';
-    ctx.font='600 13px Arial';
-    ctx.fillText('PAYMENT AMOUNT',200,355);
-
-    ctx.fillStyle='#FF4DA6';
-    ctx.font='900 34px Arial';
-    ctx.fillText(`₹${amount}`,200,392);
-
-    ctx.fillStyle='#F9FAFB';
-    ctx.fillRect(30,415,340,75);
-    ctx.strokeStyle='#E5E7EB';
-    ctx.lineWidth=1;
-    ctx.strokeRect(30,415,340,75);
-
-    ctx.fillStyle='#111111';
-    ctx.font='700 14px Arial';
-    ctx.fillText(customer ? `Customer: ${customer}` : 'Official Cyber Cafe Payment',200,442);
-
-    ctx.fillStyle='#6B7280';
-    ctx.font='500 13px Arial';
-    ctx.fillText(purpose ? `For: ${purpose}` : 'Online Services / Form Fee',200,467);
-
-    ctx.fillStyle='#111111';
-    ctx.font='600 12px Arial';
-    ctx.fillText(`UPI ID: ${upi}`,200,515);
-}
-
-function downloadQRCodeCard(){
-    const canvas=document.getElementById('paymentCardCanvas');
-    const link=document.createElement('a');
-    link.href=canvas.toDataURL('image/png');
-    link.download='StudentPoint_Payment_QR.png';
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-}
-
-function shareQRWhatsAppCard(){
-    const amount=document.getElementById('amount').value;
-    const customer=document.getElementById('customerName').value.trim();
-    const purpose=document.getElementById('paymentPurpose').value.trim();
-    const upi=document.getElementById('upiSelect').value;
-
-    let text=`*THE STUDENT POINT - Payment Details*\\n\\n`;
-    if(customer)text+=`👤 *Customer:* ${customer}\\n`;
-    if(purpose)text+=`📌 *Work:* ${purpose}\\n`;
-    text+=`💰 *Amount:* ₹${amount}\\n`;
-    text+=`🆔 *UPI:* ${upi}\\n\\n`;
-    text+=`Direct payment link:\\n`;
-    text+=`upi://pay?pa=${encodeURIComponent(upi)}&pn=${encodeURIComponent('THE STUDENT POINT')}&am=${encodeURIComponent(amount)}&cu=INR`;
-    window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`,'_blank');
-}
-
-function showPayment(){
-    const sec=document.getElementById('payment-section');
-    sec.classList.remove('hidden');
-    currentPaymentVisible=true;
-    document.getElementById('paymentFab').classList.add('hidden');
-    sec.scrollIntoView({behavior:'smooth',block:'start'});
-}
-
-function hidePayment(){
-    document.getElementById('payment-section').classList.add('hidden');
-    currentPaymentVisible=false;
-    document.getElementById('paymentFab').classList.remove('hidden');
-}
-
-function showCategory(cat){
-    const boxes=document.querySelectorAll('.category-box');
-    boxes.forEach(box=>{
-        box.classList.toggle('hidden',cat!=='all' && box.id!==cat);
-    });
-    document.getElementById('categoriesGrid').scrollIntoView({behavior:'smooth',block:'start'});
-}
-
-function filterLinks(){
-    const input=document.getElementById('searchInput').value.toLowerCase().trim();
-    const boxes=document.querySelectorAll('.category-box');
-
-    boxes.forEach(box=>{
-        let hasMatch=false;
-        box.querySelectorAll('li').forEach(li=>{
-            const match=li.textContent.toLowerCase().includes(input);
-            li.style.display=match?'':'none';
-            if(match)hasMatch=true;
-        });
-        box.classList.toggle('hidden',!hasMatch);
-    });
-
-    if(input===''){
-        boxes.forEach(box=>{
-            box.classList.remove('hidden');
-            box.querySelectorAll('li').forEach(li=>li.style.display='');
-        });
-    }
-}
-
-function toggleMobileMenu(){
-    const menu=document.getElementById('mobile-menu');
-    const icon=document.getElementById('menu-icon');
-    menu.classList.toggle('hidden');
-    icon.classList.toggle('fa-bars');
-    icon.classList.toggle('fa-xmark');
-}
-
-function closeMobileMenu(){
-    document.getElementById('mobile-menu').classList.add('hidden');
-    const icon=document.getElementById('menu-icon');
-    icon.classList.remove('fa-xmark');
-    icon.classList.add('fa-bars');
-}
-
-window.addEventListener('load',()=>{
-    renderUPIOptions();
-});
+const defaultUPIs=[{name:"Main Shop UPI",id:"studentpoint@upi"}];
+const $=id=>document.getElementById(id);
+function getUPIs(){try{let x=localStorage.getItem("student_point_upis");return x?JSON.parse(x):defaultUPIs}catch(e){return defaultUPIs}}
+function saveUPIs(x){localStorage.setItem("student_point_upis",JSON.stringify(x))}
+function renderUPIOptions(){let s=$("upiSelect");s.innerHTML="";getUPIs().forEach(u=>{let o=document.createElement("option");o.value=u.id;o.textContent=`${u.name} (${u.id})`;s.appendChild(o)});selectUPI()}
+function selectUPI(){let s=$("upiSelect");if(s.value){$("selectedUPIBox").classList.remove("hidden");$("selectedUPIText").textContent=s.value}}
+function openUPIManager(){$("upiModal").classList.remove("hidden");renderUPIManagerList()}
+function closeUPIManager(){$("upiModal").classList.add("hidden")}
+function renderUPIManagerList(){let l=$("upiList");l.innerHTML="";getUPIs().forEach((u,i)=>{let d=document.createElement("div");d.className="flex justify-between bg-gray-50 p-2 rounded border";d.innerHTML=`<span><b>${u.name}</b><small class="block text-gray-500">${u.id}</small></span><button onclick="deleteUPIAccount(${i})" class="text-red-500">🗑️</button>`;l.appendChild(d)})}
+function addUPIAccount(){let n=$("newUpiName"),i=$("newUpiId"),name=n.value.trim(),id=i.value.trim();if(!name||!id)return alert("कृपया Account Name और UPI ID दोनों भरें!");let x=getUPIs();x.push({name,id});saveUPIs(x);n.value=i.value="";renderUPIManagerList();renderUPIOptions()}
+function deleteUPIAccount(i){let x=getUPIs();if(x.length<=1)return alert("कम से कम एक UPI Account होना जरूरी है!");x.splice(i,1);saveUPIs(x);renderUPIManagerList();renderUPIOptions()}
+function openPayment(){$("payment-section").classList.remove("hidden");$("payment-section").scrollIntoView({behavior:"smooth"})}
+function closePayment(){$("payment-section").classList.add("hidden")}
+function generatePaymentQR(){let upi=$("upiSelect").value,amount=$("amount").value,customer=$("customerName").value.trim(),purpose=$("paymentPurpose").value.trim();if(!upi)return alert("कृपया UPI Select करें!");if(!amount||amount<=0)return alert("कृपया सही Payment Amount दर्ज करें!");let uri=`upi://pay?pa=${encodeURIComponent(upi)}&pn=${encodeURIComponent("THE STUDENT POINT")}&am=${encodeURIComponent(amount)}&cu=INR${purpose?"&tn="+encodeURIComponent(purpose):""}`;$("qrcode").innerHTML="";new QRCode($("qrcode"),{text:uri,width:220,height:220,colorDark:"#000",colorLight:"#fff",correctLevel:QRCode.CorrectLevel.H});setTimeout(()=>drawCard(upi,amount,customer,purpose),250)}
+function drawCard(upi,amount,customer,purpose){let c=$("paymentCardCanvas"),x=c.getContext("2d"),img=document.querySelector("#qrcode img")||document.querySelector("#qrcode canvas");x.fillStyle="#fff";x.fillRect(0,0,400,540);x.fillStyle="#111";x.fillRect(0,0,400,82);x.fillStyle="#FF4DA6";x.fillRect(0,78,400,4);x.textAlign="center";x.font="900 20px sans-serif";x.fillStyle="#fff";x.fillText("THE STUDENT POINT",200,50);x.strokeStyle="#111";x.lineWidth=3;x.strokeRect(90,105,220,220);if(img)x.drawImage(img,100,115,200,200);x.fillStyle="#111";x.font="700 13px sans-serif";x.fillText("PAYMENT AMOUNT",200,355);x.fillStyle="#FF4DA6";x.font="900 34px sans-serif";x.fillText(`₹${amount}`,200,392);x.fillStyle="#f9fafb";x.fillRect(30,415,340,75);x.fillStyle="#111";x.font="700 14px sans-serif";x.fillText(customer?`Customer: ${customer}`:"Official Cyber Cafe Payment",200,442);x.fillStyle="#6b7280";x.font="500 13px sans-serif";x.fillText(purpose?`For: ${purpose}`:"Online Services / Form Fee",200,467);x.fillStyle="#111";x.font="600 12px sans-serif";x.fillText(`UPI ID: ${upi}`,200,515);$("qrResult").classList.remove("hidden")}
+function downloadQRCodeCard(){let a=document.createElement("a");a.href=$("paymentCardCanvas").toDataURL("image/png");a.download="StudentPoint_Payment_QR.png";a.click()}
+function shareQRWhatsAppCard(){let a=$("amount").value,u=$("upiSelect").value,c=$("customerName").value,p=$("paymentPurpose").value,t=`*THE STUDENT POINT - Payment QR*\n\n💰 Amount: ₹${a}\n🆔 UPI: ${u}`+(c?`\n👤 Customer: ${c}`:"")+(p?`\n📌 Work: ${p}`:"");open("https://api.whatsapp.com/send?text="+encodeURIComponent(t),"_blank")}
+function showCategory(cat){$("payment-section").classList.add("hidden");document.querySelectorAll(".category-box").forEach(b=>b.classList.toggle("hidden",b.id!==cat));$("categoriesGrid").scrollIntoView({behavior:"smooth"})}
+function showHome(){document.querySelectorAll(".category-box").forEach(b=>b.classList.remove("hidden"));$("payment-section").classList.add("hidden");scrollTo({top:0,behavior:"smooth"})}
+function filterLinks(){let q=$("searchInput").value.toLowerCase().trim();document.querySelectorAll(".category-box").forEach(b=>{let ok=false;b.querySelectorAll("li").forEach(li=>{let m=li.textContent.toLowerCase().includes(q);li.style.display=m?"":"none";if(m)ok=true});b.classList.toggle("hidden",q&&!ok)})}
+function scrollToServices(){$("services-section").scrollIntoView({behavior:"smooth"})}
+function toggleMobileMenu(){let m=$("mobile-menu");m.classList.toggle("hidden");$("menu-icon").className=m.classList.contains("hidden")?"fa-solid fa-bars":"fa-solid fa-xmark"}
+function closeMobileMenu(){$("mobile-menu").classList.add("hidden");$("menu-icon").className="fa-solid fa-bars"}
+function openPhotoCompressor(){$("photoModal").classList.remove("hidden")}
+function openPassport(){$("passportModal").classList.remove("hidden")}
+function closeTool(id){$(id).classList.add("hidden")}
+function compressPhoto(){let f=$("compressFile").files[0],target=+$("targetKB").value||100;if(!f)return alert("पहले फोटो चुनें!");let r=new FileReader();r.onload=e=>{let im=new Image();im.onload=()=>{let c=document.createElement("canvas"),s=Math.min(1,1800/Math.max(im.width,im.height));c.width=im.width*s;c.height=im.height*s;c.getContext("2d").drawImage(im,0,0,c.width,c.height);let q=+$("quality").value||.8,d=c.toDataURL("image/jpeg",q);for(let z=0;z<12&&d.length/1.37>target*1024;z++){q=Math.max(.1,q-.06);d=c.toDataURL("image/jpeg",q)}$("compressedPreview").src=d;$("compressInfo").textContent="Approx. Size: "+(d.length/1.37/1024).toFixed(1)+" KB";$("downloadCompressed").href=d;$("compressResult").classList.remove("hidden")};im.src=e.target.result};r.readAsDataURL(f)}
+function makePassport(){let f=$("passportFile").files[0];if(!f)return alert("पहले फोटो चुनें!");let w=+$("passportW").value||413,h=+$("passportH").value||531,r=new FileReader();r.onload=e=>{let im=new Image();im.onload=()=>{let c=$("passportCanvas"),x=c.getContext("2d");c.width=w;c.height=h;let s=Math.max(w/im.width,h/im.height),nw=im.width*s,nh=im.height*s;x.fillStyle="#fff";x.fillRect(0,0,w,h);x.drawImage(im,(w-nw)/2,(h-nh)/2,nw,nh);$("downloadPassport").href=c.toDataURL("image/jpeg",.92);$("passportResult").classList.remove("hidden")};im.src=e.target.result};r.readAsDataURL(f)}
+window.onload=renderUPIOptions;
 </script>
-
 </body>
 </html>
