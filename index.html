@@ -149,8 +149,7 @@
 
 <!-- MAIN CONTENT -->
 <main class="max-w-7xl mx-auto px-4 py-8 flex-grow">
-
-    <!-- PAYMENT GENERATOR SECTION -->
+        <!-- PAYMENT GENERATOR SECTION -->
     <section id="payment-section" class="payment-section hidden mb-10">
         <div class="max-w-3xl mx-auto">
             <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
@@ -200,6 +199,35 @@
                     <button onclick="generatePaymentQR()" class="w-full pink-gradient text-white py-3.5 rounded-xl font-black text-lg shadow-lg hover:opacity-95 transition">
                         <i class="fa-solid fa-qrcode mr-2"></i> Generate Payment QR
                     </button>
+
+                    <!-- DESIGNER CANVAS CARD DISPLAY -->
+                    <div id="qrResult" class="hidden mt-7">
+                        <div class="border-t pt-6">
+                            <div class="flex justify-center overflow-x-auto py-2">
+                                <canvas id="paymentCardCanvas" width="400" height="540" class="rounded-2xl shadow-2xl border border-gray-300 max-w-full h-auto"></canvas>
+                            </div>
+
+                            <!-- Hidden div for raw QR rendering -->
+                            <div id="qrcode" class="hidden"></div>
+
+                            <!-- ACTION BUTTONS -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
+                                <button onclick="downloadQRCodeCard()" class="bg-brandBlack text-white py-3.5 px-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-black transition text-sm shadow-md">
+                                    <i class="fa-solid fa-download text-brandPink"></i> Download Payment Card
+                                </button>
+                                <button onclick="shareQRWhatsAppCard()" class="bg-green-600 text-white py-3.5 px-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-green-700 transition text-sm shadow-md">
+                                    <i class="fa-brands fa-whatsapp text-lg"></i> Share Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
 
                     <!-- QR RESULT WITH DOWNLOAD & WHATSAPP BUTTONS -->
                     <div id="qrResult" class="hidden mt-7">
