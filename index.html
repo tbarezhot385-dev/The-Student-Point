@@ -201,6 +201,7 @@
                         <i class="fa-solid fa-qrcode mr-2"></i> Generate Payment QR
                     </button>
 
+                    <!-- QR RESULT WITH DOWNLOAD & WHATSAPP BUTTONS -->
                     <div id="qrResult" class="hidden mt-7">
                         <div class="border-t pt-6">
                             <div class="text-center">
@@ -217,6 +218,16 @@
                             <div class="text-center mt-4">
                                 <p class="font-bold text-gray-800">Scan करके ₹<span id="scanAmount">0</span> Pay करें</p>
                                 <p class="text-xs text-gray-500 mt-1">UPI ID: <span id="displayUPI"></span></p>
+                            </div>
+
+                            <!-- SHARE & DOWNLOAD BUTTONS -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
+                                <button onclick="downloadQRCode()" class="bg-gray-800 text-white py-3 px-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-gray-900 transition text-sm">
+                                    <i class="fa-solid fa-download"></i> Download QR
+                                </button>
+                                <button onclick="shareQRWhatsApp()" class="bg-green-600 text-white py-3 px-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-green-700 transition text-sm">
+                                    <i class="fa-brands fa-whatsapp text-lg"></i> Share Details
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -249,8 +260,7 @@
                 <li class="p-3.5 hover:bg-pink-50 transition"><a href="https://scholarships.gov.in/" target="_blank" class="hover:text-brandPink font-medium block">National Scholarship Portal Official Site</a></li>
             </ul>
         </div>
-
-        <div id="latest-jobs" class="category-box bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
+                <div id="latest-jobs" class="category-box bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
             <div class="bg-blue-600 text-white p-3.5 font-bold text-lg flex items-center gap-2">
                 <i class="fa-solid fa-briefcase"></i> Latest Jobs
             </div>
@@ -297,7 +307,7 @@
         </div>
 
         <div id="admit-card" class="category-box bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
-                        <div class="bg-orange-500 text-white p-3.5 font-bold text-lg flex items-center gap-2">
+            <div class="bg-orange-500 text-white p-3.5 font-bold text-lg flex items-center gap-2">
                 <i class="fa-solid fa-id-card"></i> Admit Card
             </div>
             <ul class="divide-y divide-gray-100 text-sm">
@@ -503,6 +513,48 @@
         } catch(e) {
             alert("QR Code Generate करने में समस्या हुई। कृपया Page Refresh करें।");
         }
+    }
+
+    function downloadQRCode() {
+        const qrCanvas = document.querySelector('#qrcode canvas');
+        const qrImg = document.querySelector('#qrcode img');
+
+        let imageURI = "";
+        if (qrCanvas) {
+            imageURI = qrCanvas.toDataURL("image/png");
+        } else if (qrImg) {
+            imageURI = qrImg.src;
+        }
+
+        if (!imageURI) {
+            alert("Pehle QR Code generate karein!");
+            return;
+        }
+
+        const link = document.createElement('a');
+        link.href = imageURI;
+        link.download = `Payment_QR_${document.getElementById('amount').value || 'Details'}.png`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+    function shareQRWhatsApp() {
+        const upi = document.getElementById('displayUPI').textContent;
+        const amount = document.getElementById('scanAmount').textContent;
+        const customer = document.getElementById('customerName').value;
+        const purpose = document.getElementById('paymentPurpose').value;
+
+        let text = `*THE STUDENT POINT - Payment Details*\n\n`;
+        if (customer) text += `👤 *Customer:* ${customer}\n`;
+        if (purpose) text += `📌 *Payment For:* ${purpose}\n`;
+        text += `💰 *Amount:* ₹${amount}\n`;
+        text += `🆔 *UPI ID:* ${upi}\n\n`;
+        text += `Niche link se direct payment karein:\n`;
+        text += `upi://pay?pa=${encodeURIComponent(upi)}&pn=THE%20STUDENT%20POINT&am=${encodeURIComponent(amount)}&cu=INR`;
+
+        const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
+        window.open(whatsappUrl, '_blank');
     }
 
     function showPayment() {
