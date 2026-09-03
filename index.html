@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>THE STUDENT POINT - Latest Jobs, Scholarship & Results</title>
+<meta name="description" content="THE STUDENT POINT - Latest Jobs, Scholarship and Results updates.">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f5f7fb;color:#111;font-family:Arial,Helvetica,sans-serif;font-size:13px}
+a{text-decoration:none;color:#003caa}
+.wrap{max-width:1100px;margin:auto}
+.top{background:#1674d1;color:#fff;text-align:center;padding:8px 10px 7px;border-bottom:4px solid #ff1616}
+.logo{display:flex;justify-content:center;align-items:center;gap:9px}
+.logoMark{width:42px;height:42px;border-radius:50%;background:#fff;color:#1674d1;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:15px;border:3px solid #ffcc00}
+.brand{font-size:25px;font-weight:900;line-height:1}
+.tag{font-size:10px;margin-top:3px;font-weight:bold;letter-spacing:.2px}
+.nav{background:#ed1010;color:#fff;display:flex;justify-content:center;flex-wrap:wrap}
+.nav a{color:#fff;padding:7px 16px;font-size:12px;font-weight:bold;border-right:1px solid rgba(255,255,255,.25)}
+.nav a:hover{background:#c90000}
+.notice{background:#fff;border-bottom:1px solid #ddd;padding:5px;text-align:center;font-size:11px;font-weight:bold;color:#0645a7}
+.search{text-align:center;padding:8px 5px}
+.search input{width:min(420px,90%);height:28px;border:1px solid #1674d1;border-radius:15px;padding:0 12px;font-size:11px}
+.search button{height:28px;border:0;border-radius:15px;background:#1674d1;color:#fff;padding:0 14px;font-weight:bold;cursor:pointer}
+.quick{display:grid;grid-template-columns:repeat(6,1fr);gap:3px;margin:2px 5px 9px}
+.quick a{background:#0868c7;color:#fff;border:1px solid #004b9c;text-align:center;padding:4px 2px;font-size:9px;font-weight:bold;line-height:1.15}
+.quick a:hover{background:#004f9e}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:0 5px}
+.box{background:#fff;border:1px solid #1674d1;min-height:360px}
+.head{background:#0868c7;color:#fff;text-align:center;font-size:15px;font-weight:900;padding:6px;border-bottom:3px solid #ffcc00}
+.item{padding:6px 7px;border-bottom:1px solid #d5d5d5;font-size:11px;line-height:1.25}
+.item:nth-child(even){background:#f5f9ff}
+.item a{color:#111;font-weight:600}
+.item a:hover{color:#e40000;text-decoration:underline}
+.new{color:#e00000;font-weight:900;font-size:9px;margin-left:3px}
+.date{font-size:9px;color:#777;display:block;margin-top:2px}
+.more{display:block;background:#1674d1;color:#fff;text-align:center;font-size:10px;font-weight:bold;padding:5px}
+.more:hover{background:#e40000}
+.info{margin:8px 5px;background:#fff;border:1px solid #d2d2d2}
+.info h3{margin:0;background:#0875dc;color:#fff;text-align:center;font-size:14px;padding:6px}
+.info p,.info li{font-size:11px;line-height:1.5}
+.info p{padding:0 9px}
+.info ul{margin:5px 22px 10px;padding:0}
+.footer{margin-top:10px;background:#0868c7;color:#fff;text-align:center;padding:12px;font-size:11px}
+.noresult{text-align:center;padding:30px;color:#777;display:none}
+@media(max-width:700px){
+ .brand{font-size:20px}.nav a{padding:6px 10px;font-size:10px}
+ .quick{grid-template-columns:repeat(3,1fr)}
+ .grid{grid-template-columns:1fr;gap:8px}
+ .box{min-height:auto}
+ .head{font-size:14px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="logo">
+    <div class="logoMark">TSP</div>
+    <div>
+      <div class="brand">THE STUDENT POINT</div>
+      <div class="tag">ONLINE UPDATE • JOB • SCHOLARSHIP • RESULT</div>
+    </div>
+  </div>
+</header>
+
+<nav class="nav">
+  <a href="#home">Home</a>
+  <a href="#jobs">Latest Jobs</a>
+  <a href="#scholarship">Scholarship</a>
+  <a href="#results">Results</a>
+  <a href="#contact">Contact Us</a>
+</nav>
+
+<div class="notice">🔔 Online Update: Latest Jobs, Scholarship, Results & Important Information</div>
+
+<section class="search" id="home">
+  <input id="search" oninput="searchItems()" placeholder="Search Jobs, Scholarship, Results...">
+  <button onclick="searchItems()">Search</button>
+</section>
+
+<div class="quick">
+  <a href="#jobs">Latest Job</a>
+  <a href="#jobs">Government Job</a>
+  <a href="#scholarship">Scholarship</a>
+  <a href="#results">Latest Result</a>
+  <a href="#results">Board Result</a>
+  <a href="#jobs">Online Form</a>
+</div>
+
+<main class="grid">
+
+<section class="box" id="jobs">
+  <div class="head">Latest Jobs</div>
+  <div class="item"><a href="https://ssc.gov.in/" target="_blank">SSC Recruitment / Latest Vacancy <span class="new">NEW</span></a><span class="date">Updated Today</span></div>
+  <div class="item"><a href="https://www.ibps.in/" target="_blank">IBPS Recruitment Notification</a><span class="date">Latest Update</span></div>
+  <div class="item"><a href="https://www.rrbapply.gov.in/" target="_blank">Railway Recruitment Board Vacancy</a><span class="date">Latest Update</span></div>
+  <div class="item"><a href="https://csbc.bihar.gov.in/" target="_blank">Bihar Police Recruitment</a><span class="date">Latest Update</span></div>
+  <div class="item"><a href="https://www.upsc.gov.in/" target="_blank">UPSC Latest Recruitment</a><span class="date">Latest Update</span></div>
+  <div class="item"><a href="https://www.indiapost.gov.in/" target="_blank">India Post Recruitment</a><span class="date">Latest Update</span></div>
+  <div class="item"><a href="https://agnipathvayu.cdac.in/" target="_blank">Agniveervayu Recruitment</a><span class="date">Latest Update</span></div>
+  <div class="item"><a href="https://www.bssc.bihar.gov.in/" target="_blank">Bihar SSC Recruitment</a><span class="date">Latest Update</span></div>
+  <a class="more" href="#jobs">View More Jobs »</a>
+</section>
+
+<section class="box" id="scholarship">
+  <div class="head">Scholarship</div>
+  <div class="item"><a href="https://scholarships.gov.in/" target="_blank">National Scholarship Portal (NSP) <span class="new">NEW</span></a><span class="date">Latest Update</span></div>
+  <div class="item"><a href="https://pmsonline.bih.nic.in/" target="_blank">Bihar Post Matric Scholarship</a><span class="date">Latest Update</span></div>
+  <div class="item"><a href="https://medhasoft.bih.nic.in/" target="_blank">Bihar Medhasoft Scholarship</a><span class="date">Latest Update</span></div>
+  <div class="item"><a href="https://yet.nta.ac.in/" target="_blank">PM YASASVI Scholarship</a><span class="date">Latest Update</span></div>
+  <div class="item"><a href="https://scholarships.gov.in/" target="_blank">Pre Matric Scholarship</a><span class="date">Latest Update</span></div>
+  <div class="item"><a href="https://scholarships.gov.in/" target="_blank">Central Sector Scholarship</a><span class="date">Latest Update</span></div>
+  <div class="item"><a href="https://medhasoft.bih.nic.in/" target="_blank">Bihar Student Scholarship Updates</a><span class="date">Latest Update</span></div>
+  <a class="more" href="#scholarship">View More Scholarship »</a>
+</section>
+
+<section class="box" id="results">
+  <div class="head">Results</div>
+  <div class="item"><a href="https://biharboardonline.bihar.gov.in/" target="_blank">Bihar Board 10th / 12th Result <span class="new">NEW</span></a><span class="date">Latest Update</span></div>
+  <div class="item"><a href="https://bceceboard.bihar.gov.in/" target="_blank">BCECE Board Result</a><span class="date">Latest Update</span></div>
+  <div class="item"><a href="https://lnmu.ac.in/" target="_blank">LNMU University Result</a><span class="date">Latest Update</span></div>
+  <div class="item"><a href="https://ssc.gov.in/" target="_blank">SSC Result</a><span class="date">Latest Update</span></div>
+  <div class="item"><a href="https://www.ibps.in/" target="_blank">IBPS Result</a><span class="date">Latest Update</span></div>
+  <div class="item"><a href="https://www.rrbapply.gov.in/" target="_blank">Railway Result</a><span class="date">Latest Update</span></div>
+  <div class="item"><a href="https://www.upsc.gov.in/" target="_blank">UPSC Result</a><span class="date">Latest Update</span></div>
+  <a class="more" href="#results">View More Results »</a>
+</section>
+
+</main>
+
+<div id="noresult" class="noresult">🔎 कोई result नहीं मिला। दूसरा keyword try करें।</div>
+
+<section class="info">
+  <h3>Why Choose Online Update - THE STUDENT POINT?</h3>
+  <p>THE STUDENT POINT पर आपको Latest Jobs, Scholarship और Results की जानकारी एक ही जगह मिलेगी। सभी महत्वपूर्ण updates को simple और mobile-friendly तरीके से दिखाया गया है।</p>
+  <ul>
+    <li>Latest Government & Private Job Updates</li>
+    <li>Scholarship Form और Important Dates</li>
+    <li>Board, University और Competitive Exam Results</li>
+    <li>Online Form और Official Website Links</li>
+  </ul>
+</section>
+
+<section class="info" id="contact">
+  <h3>Contact THE STUDENT POINT</h3>
+  <p style="text-align:center"><b>📞 8210871416</b> &nbsp; | &nbsp; <a href="https://wa.me/918210871416" target="_blank">💬 WhatsApp</a></p>
+</section>
+
+<footer class="footer">
+  © 2026 THE STUDENT POINT • Latest Jobs • Scholarship • Results
+</footer>
+
+<script>
+function searchItems(){
+  const q=document.getElementById('search').value.toLowerCase().trim();
+  const boxes=document.querySelectorAll('.box');
+  let found=0;
+  boxes.forEach(box=>{
+    let boxFound=0;
+    box.querySelectorAll('.item').forEach(item=>{
+      const ok=item.textContent.toLowerCase().includes(q);
+      item.style.display=ok?'block':'none';
+      if(ok) boxFound++;
+    });
+    box.style.display=(q && !boxFound)?'none':'block';
+    found+=boxFound;
+  });
+  document.getElementById('noresult').style.display=(q && !found)?'block':'none';
+}
+</script>
+</body>
+</html>
